@@ -8,19 +8,21 @@ HOW TO USE:
 
 TESTING AGAINST EAP APPLICATION SERVER
 
-1. Make sure that JBOSS_HOME is set with the path to your JBOSS EAP directory.
+1. Make sure that JBOSS_FOLDER environment variable is set with the path to your JBOSS EAP directory.
 2. Build and run the additional testsuite activating the EAP profile (-Deap).
+
 
 TESTING AGAINST WILDFLY APPLICATION SERVER
 
-1. Make sure that JBOSS_HOME is set with the path to your WILDFLY directory.
+1. Make sure that JBOSS_FOLDER environment variable is set with the path to your WILDFLY directory.
 2. Build and run the additional testsuite activating the WILDFLY profile (-Dwildfly).
+
 
 TESTING AGAINST EAP OR WILDFLY APPLICATION SERVER USING SPECIFIC JDK VERSION
 
-1. Make sure that JBOSS_HOME is set with the path to your EAP OR WILDFLY directory.
+1. Make sure that JBOSS_FOLDER is set with the path to your EAP OR WILDFLY directory.
 2. Make sure that JAVA_HOME is pointing to the jdk of desired version.
-3. Build and run the additional testsuite activating the EAP or WILDFLY specific jdk version profile (-Deap.jdk8, -Dwildfly.jdk8).
+3. Build and run the additional testsuite activating the EAP or WILDFLY specific jdk version profile (-Deap-jdk8, -Dwildfly-jdk8).
 
 
 #License 

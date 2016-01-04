@@ -16,201 +16,84 @@
     <packaging>pom</packaging>
     <version>1.0.1.Final-SNAPSHOT</version>
 
-    <name>jboss application server testsuite: additional testsuite</name>
-    
-    <properties>
-        <version.org.jboss.arquillian.container.managed>7.1.3.Final</version.org.jboss.arquillian.container.managed>
-        <version.org.wildfly.arquillian>1.0.1.Final</version.org.wildfly.arquillian>
-        <version.junit>4.11</version.junit>
-        <version.org.apache.commons>1.3.2</version.org.apache.commons>   
-        <javax.enterprise.concurrent>1.0</javax.enterprise.concurrent>
-        <xnio.version>3.1.0.Final</xnio.version>
-        <jboss.home.env>${JBOSS_HOME}</jboss.home.env>
-        <workspace>${project.basedir}</workspace>
-        <surefire.memory.args>-Xmx512m -XX:MaxPermSize=256m</surefire.memory.args>
-        <surefire.system.args>${surefire.memory.args} -Djboss.dist=${workspace}/target/jbossas -DjbossHome=${workspace}/target/jbossas</surefire.system.args>
-        <node0>127.0.0.1</node0>
-        <!-- Logging config -->
-        <testLogToFile>true</testLogToFile>
-    </properties>
-    
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.apache.commons</groupId>
-                <artifactId>commons-io</artifactId>
-                <version>${version.org.apache.commons}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.glassfish</groupId>
-                <artifactId>javax.enterprise.concurrent</artifactId>
-                <version>${javax.enterprise.concurrent}</version>
-            </dependency>   
-        </dependencies>
-    </dependencyManagement>
-    
-    <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${version.junit}</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-    
+    <name>jboss application server testsuite: eap additional testsuite</name>
+
+    <modules>
+        <module>modules</module>
+    </modules>
+
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>Main Apache Maven Repository</name>
+            <url>http://repo.maven.apache.org/maven2/</url>
+            <layout>default</layout>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+                <updatePolicy>never</updatePolicy>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>jboss-public-repository-group</id>
+            <name>JBoss Public Repository Group</name>
+            <url>http://repository.jboss.org/nexus/content/groups/public/</url>
+            <layout>default</layout>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>central</id>
+            <name>Main Apache Maven Repository</name>
+            <url>http://repo.maven.apache.org/maven2/</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+                <updatePolicy>never</updatePolicy>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>jboss-public-repository-group</id>
+            <name>JBoss Public Repository Group</name>
+            <url>http://repository.jboss.org/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
     <profiles>
         <profile>
             <id>eap.jdk8.testsuite</id>
             <activation>
                 <property>
-                    <name>eap.jdk8</name>
+                    <name>eap-jdk8</name>
+                    <value>true</value>
                 </property>
             </activation>
-
-            <modules>
-                <module>ws/jdk8/Eap</module>
-	    </modules>
-
-            <dependencies>
-                <dependency>
-                    <groupId>org.jboss.as</groupId>
-                    <artifactId>jboss-as-arquillian-container-managed</artifactId>
-                    <version>${version.org.jboss.arquillian.container.managed}</version>
-                </dependency>
-                <dependency>
-                    <groupId>org.jboss.as</groupId>
-                    <artifactId>jboss-as-testsuite-shared</artifactId>
-                    <version>7.2.0.Final</version>
-                </dependency>
-                <dependency>
-                    <groupId>org.jboss.arquillian.junit</groupId>
-                    <artifactId>arquillian-junit-container</artifactId>
-                    <version>1.0.0.Final</version>
-                </dependency>
-            </dependencies>
-
-            <build>
-                <plugins>
-            
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-antrun-plugin</artifactId>
-                        <version>1.6</version>
-                        
-                        <executions>
-                            <execution>
-                                <id>prepare</id>
-                                <inherited>false</inherited>
-                                <phase>generate-resources</phase>
-                                <configuration>
-                                    <target>
-                                        <copy todir="eap/build/target/" preservelastmodified="true">
-                                            <fileset dir="${jboss.home.env}">
-                                                <include name="**/**"/>
-                                            </fileset>
-                                        </copy>                        
-                                    </target>
-                                </configuration>
-                                <goals>
-                                    <goal>run</goal>
-                                </goals>
-                            </execution>
-                            <execution>
-                                <inherited>false</inherited>
-                                <phase>generate-test-resources</phase>
-                                <configuration>
-                                    <target>
-                                        <copy todir="${workspace}/target/jbossas" preservelastmodified="true">
-                                            <fileset dir="eap/build/target">
-                                                <include name="**/**"/>
-                                            </fileset>
-                                        </copy>
-                                        <chmod file="${workspace}/target/jbossas/bin/standalone.sh" perm="777"/>                            
-                                    </target>
-                                </configuration>
-                                <goals>
-                                    <goal>run</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-
-                    <plugin>
-			<groupId>org.codehaus.mojo</groupId>
-			<artifactId>build-helper-maven-plugin</artifactId>
-			<version>1.9.1</version>
-			<executions>
-			  <execution>
-			    <id>add-test-source</id>
-			    <phase>generate-test-sources</phase>
-			    <goals>
-			      <goal>add-test-source</goal>
-			    </goals>
-			    <configuration>
-			      <sources>
-				<source>${basedir}/../src/test/java</source>
-			      </sources>
-			    </configuration>
-			  </execution>
-			</executions>
-		    </plugin>
-
-                    <!-- General surefire configuration. Applies to submodules too. -->
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <configuration>
-                            <!-- Prevent test and server output appearing in console. -->
-                            <redirectTestOutputToFile>${testLogToFile}</redirectTestOutputToFile>
-		            
-                            <!-- Arquillian's config files. -->
-                            <additionalClasspathElements combine.children="append">
-                                <additionalClasspathElement>${basedir}/../src/test/config/arqEap</additionalClasspathElement>
-                            </additionalClasspathElements>
-
-                        </configuration>
-                    </plugin>
-                    
-                </plugins>
-            </build>
-
-            <!--
-		Repositories are defined in the order that they should be used.
-		(1) Maven central, (2) JBoss.org, (3) JBoss product
-		By default maven central is used last, so it is redefined here to
-		force it to be used first.
-	      -->
 	    <repositories>
 		<repository>
-		    <id>central</id>
-		    <name>Main Apache Maven Repository</name>
-		    <url>http://repo.maven.apache.org/maven2/</url>
-		    <layout>default</layout>
-		    <releases>
-		        <enabled>true</enabled>
-		        <updatePolicy>never</updatePolicy>
-		    </releases>
-		    <snapshots>
-		        <enabled>false</enabled>
-		        <updatePolicy>never</updatePolicy>
-		    </snapshots>
-		</repository>
-		<repository>
-		    <id>jboss-public-repository-group</id>
-		    <name>JBoss Public Repository Group</name>
-		    <url>http://repository.jboss.org/nexus/content/groups/public/</url>
-		    <layout>default</layout>
-		    <releases>
-		        <enabled>true</enabled>
-		        <updatePolicy>never</updatePolicy>
-		    </releases>
-		    <snapshots>
-		        <enabled>true</enabled>
-		        <updatePolicy>daily</updatePolicy>
-		    </snapshots>
-		</repository>
-		<repository>
-		    <id>jboss-product-repository</id>
+		    <id>jboss-product-repository-eap6</id>
 		    <name>JBoss Internal Product Repository</name>
 		    <url>http://download.lab.bos.redhat.com/brewroot/repos/jb-eap-6.4-rhel-6-build/latest/maven/</url>
 		    <layout>default</layout>
@@ -227,33 +110,7 @@
 
 	    <pluginRepositories>
 		<pluginRepository>
-		    <id>central</id>
-		    <name>Main Apache Maven Repository</name>
-		    <url>http://repo.maven.apache.org/maven2/</url>
-		    <releases>
-		        <enabled>true</enabled>
-		        <updatePolicy>never</updatePolicy>
-		    </releases>
-		    <snapshots>
-		        <enabled>false</enabled>
-		        <updatePolicy>never</updatePolicy>
-		    </snapshots>
-		</pluginRepository>
-		<pluginRepository>
-		    <id>jboss-public-repository-group</id>
-		    <name>JBoss Public Repository Group</name>
-		    <url>http://repository.jboss.org/nexus/content/groups/public/</url>
-		    <releases>
-		        <enabled>true</enabled>
-		        <updatePolicy>never</updatePolicy>
-		    </releases>
-		    <snapshots>
-		        <enabled>true</enabled>
-		        <updatePolicy>daily</updatePolicy>
-		    </snapshots>
-		</pluginRepository>
-		<pluginRepository>
-		    <id>jboss-product-repository</id>
+		    <id>jboss-product-repository-eap6</id>
 		    <name>JBoss Internal Product Repository</name>
 		    <url>http://download.lab.bos.redhat.com/brewroot/repos/jb-eap-6.4-rhel-6-build/latest/maven/</url>
 		    <layout>default</layout>
@@ -274,169 +131,12 @@
             <activation>
                 <property>
                     <name>eap</name>
+                    <value>true</value>
                 </property>
             </activation>
-
-            <dependencyManagement>
-                <dependencies>
-                    <dependency>
-		        <groupId>org.apache.httpcomponents</groupId>
-		        <artifactId>httpclient</artifactId>
-		        <version>4.3.6.redhat-1</version>
-		    </dependency>
-                    <dependency>
-                        <groupId>org.jboss.spec.javax.servlet</groupId>
-                        <artifactId>jboss-servlet-api_2.5_spec</artifactId>
-                        <version>1.0.1.Final-redhat-3</version>
-                    </dependency>
-                </dependencies>
-            </dependencyManagement>
-            
-            <dependencies>
-                <dependency>
-                    <groupId>org.jboss.as</groupId>
-                    <artifactId>jboss-as-arquillian-container-managed</artifactId>
-                    <version>${version.org.jboss.arquillian.container.managed}</version>
-                </dependency>
-                <dependency>
-                    <groupId>org.jboss.as</groupId>
-                    <artifactId>jboss-as-testsuite-shared</artifactId>
-                    <version>7.2.0.Final</version>
-                </dependency>
-                <dependency>
-                    <groupId>org.jboss.arquillian.junit</groupId>
-                    <artifactId>arquillian-junit-container</artifactId>
-                    <version>1.0.0.Final</version>
-                </dependency>
-            </dependencies>
-            
-	    <modules>
-		<module>basic/jdkAll/Eap</module>
-		<module>web/jdkAll/Eap</module>
-	    </modules>
-
-            <build>
-                <plugins>
-            
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-antrun-plugin</artifactId>
-                        <version>1.6</version>
-                        
-                        <executions>
-                            <execution>
-                                <id>prepare</id>
-                                <inherited>false</inherited>
-                                <phase>generate-resources</phase>
-                                <configuration>
-                                    <target>
-                                        <copy todir="eap/build/target/" preservelastmodified="true">
-                                            <fileset dir="${jboss.home.env}">
-                                                <include name="**/**"/>
-                                            </fileset>
-                                        </copy>                        
-                                    </target>
-                                </configuration>
-                                <goals>
-                                    <goal>run</goal>
-                                </goals>
-                            </execution>
-                            <execution>
-                                <inherited>false</inherited>
-                                <phase>generate-test-resources</phase>
-                                <configuration>
-                                    <target>
-                                        <copy todir="${workspace}/target/jbossas" preservelastmodified="true">
-                                            <fileset dir="eap/build/target">
-                                                <include name="**/**"/>
-                                            </fileset>
-                                        </copy>
-                                        <chmod file="${workspace}/target/jbossas/bin/standalone.sh" perm="777"/>                            
-                                    </target>
-                                </configuration>
-                                <goals>
-                                    <goal>run</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-
-                    <plugin>
-			<groupId>org.codehaus.mojo</groupId>
-			<artifactId>build-helper-maven-plugin</artifactId>
-			<version>1.9.1</version>
-			<executions>
-			  <execution>
-			    <id>add-test-source</id>
-			    <phase>generate-test-sources</phase>
-			    <goals>
-			      <goal>add-test-source</goal>
-			    </goals>
-			    <configuration>
-			      <sources>
-				<source>${basedir}/../src/test/java</source>
-			      </sources>
-			    </configuration>
-			  </execution>
-			</executions>
-		    </plugin>
-
-                    <!-- General surefire configuration. Applies to submodules too. -->
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <configuration>
-                            <!-- Prevent test and server output appearing in console. -->
-                            <redirectTestOutputToFile>${testLogToFile}</redirectTestOutputToFile>
-		            
-                            <!-- Arquillian's config files. -->
-                            <additionalClasspathElements combine.children="append">
-                                <additionalClasspathElement>${basedir}/../src/test/config/arqEap</additionalClasspathElement>
-                            </additionalClasspathElements>
-
-                        </configuration>
-                    </plugin>
-                    
-                </plugins>
-            </build>
-
-            <!--
-		Repositories are defined in the order that they should be used.
-		(1) Maven central, (2) JBoss.org, (3) JBoss product
-		By default maven central is used last, so it is redefined here to
-		force it to be used first.
-	      -->
 	    <repositories>
 		<repository>
-		    <id>central</id>
-		    <name>Main Apache Maven Repository</name>
-		    <url>http://repo.maven.apache.org/maven2/</url>
-		    <layout>default</layout>
-		    <releases>
-		        <enabled>true</enabled>
-		        <updatePolicy>never</updatePolicy>
-		    </releases>
-		    <snapshots>
-		        <enabled>false</enabled>
-		        <updatePolicy>never</updatePolicy>
-		    </snapshots>
-		</repository>
-		<repository>
-		    <id>jboss-public-repository-group</id>
-		    <name>JBoss Public Repository Group</name>
-		    <url>http://repository.jboss.org/nexus/content/groups/public/</url>
-		    <layout>default</layout>
-		    <releases>
-		        <enabled>true</enabled>
-		        <updatePolicy>never</updatePolicy>
-		    </releases>
-		    <snapshots>
-		        <enabled>true</enabled>
-		        <updatePolicy>daily</updatePolicy>
-		    </snapshots>
-		</repository>
-		<repository>
-		    <id>jboss-product-repository</id>
+		    <id>jboss-product-repository-eap6</id>
 		    <name>JBoss Internal Product Repository</name>
 		    <url>http://download.lab.bos.redhat.com/brewroot/repos/jb-eap-6.4-rhel-6-build/latest/maven/</url>
 		    <layout>default</layout>
@@ -453,33 +153,7 @@
 
 	    <pluginRepositories>
 		<pluginRepository>
-		    <id>central</id>
-		    <name>Main Apache Maven Repository</name>
-		    <url>http://repo.maven.apache.org/maven2/</url>
-		    <releases>
-		        <enabled>true</enabled>
-		        <updatePolicy>never</updatePolicy>
-		    </releases>
-		    <snapshots>
-		        <enabled>false</enabled>
-		        <updatePolicy>never</updatePolicy>
-		    </snapshots>
-		</pluginRepository>
-		<pluginRepository>
-		    <id>jboss-public-repository-group</id>
-		    <name>JBoss Public Repository Group</name>
-		    <url>http://repository.jboss.org/nexus/content/groups/public/</url>
-		    <releases>
-		        <enabled>true</enabled>
-		        <updatePolicy>never</updatePolicy>
-		    </releases>
-		    <snapshots>
-		        <enabled>true</enabled>
-		        <updatePolicy>daily</updatePolicy>
-		    </snapshots>
-		</pluginRepository>
-		<pluginRepository>
-		    <id>jboss-product-repository</id>
+		    <id>jboss-product-repository-eap6</id>
 		    <name>JBoss Internal Product Repository</name>
 		    <url>http://download.lab.bos.redhat.com/brewroot/repos/jb-eap-6.4-rhel-6-build/latest/maven/</url>
 		    <layout>default</layout>
@@ -493,183 +167,21 @@
 		    </snapshots>
 		</pluginRepository>
 	    </pluginRepositories>
-            
         </profile>
 
         <profile>
-            <id>wildfly.testsuite</id>
+            <id>eap7.jdk8.testsuite</id>
             <activation>
                 <property>
-                    <name>wildfly</name>
+                    <name>eap7-jdk8</name>
+                    <value>true</value>
                 </property>
             </activation>
-            
-            <dependencyManagement>
-                <dependencies>
-                    <dependency>
-		        <groupId>org.apache.httpcomponents</groupId>
-		        <artifactId>httpclient</artifactId>
-		        <version>4.3.6</version>
-		    </dependency>
-                    <dependency>
-                        <groupId>org.jboss.spec.javax.servlet</groupId>
-                        <artifactId>jboss-servlet-api_3.1_spec</artifactId>
-                        <version>1.0.0.Final</version>
-                    </dependency>
-                </dependencies>
-            </dependencyManagement>
-            
-            <dependencies>
-                <dependency>
-                    <groupId>org.wildfly.arquillian</groupId>
-                    <artifactId>wildfly-arquillian-container-managed</artifactId>
-                    <version>${version.org.wildfly.arquillian}</version>
-                </dependency>
-                <dependency>
-		    <groupId>org.wildfly</groupId>
-		    <artifactId>wildfly-arquillian-protocol-jmx</artifactId>
-		    <version>8.2.1.Final</version>
-		</dependency>
-                <dependency>
-                    <groupId>org.jboss.shrinkwrap</groupId>
-                    <artifactId>shrinkwrap-api</artifactId>
-                    <version>1.1.2</version>
-                </dependency>
-                <dependency>
-		    <groupId>org.wildfly</groupId>
-		    <artifactId>wildfly-testsuite-shared</artifactId>
-		    <version>10.0.0.CR4</version>
-		</dependency>
-                <dependency>
-                    <groupId>org.jboss.arquillian.junit</groupId>
-                    <artifactId>arquillian-junit-container</artifactId>
-                    <version>1.1.10.Final</version>
-                </dependency>
-            </dependencies>
-            
-            <modules>
-		<module>basic/jdkAll/Wildfly</module>
-		<module>web/jdkAll/Wildfly</module>
-	    </modules>
-
-            <build>
-                <plugins>
-            
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-antrun-plugin</artifactId>
-                        <version>1.6</version>
-                        
-                        <executions>
-                            <execution>
-                                <id>prepare</id>
-                                <inherited>false</inherited>
-                                <phase>generate-resources</phase>
-                                <configuration>
-                                    <target>
-                                        <copy todir="wildfly/build/target/" preservelastmodified="true">
-                                            <fileset dir="${jboss.home.env}">
-                                                <include name="**/**"/>
-                                            </fileset>
-                                        </copy>                        
-                                    </target>
-                                </configuration>
-                                <goals>
-                                    <goal>run</goal>
-                                </goals>
-                            </execution>
-                            <execution>
-                                <inherited>false</inherited>
-                                <phase>generate-test-resources</phase>
-                                <configuration>
-                                    <target>
-                                        <copy todir="${workspace}/target/jbossas" preservelastmodified="true">
-                                            <fileset dir="wildfly/build/target">
-                                                <include name="**/**"/>
-                                            </fileset>
-                                        </copy>
-                                        <chmod file="${workspace}/target/jbossas/bin/standalone.sh" perm="777"/>                            
-                                    </target>
-                                </configuration>
-                                <goals>
-                                    <goal>run</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-
-                    <plugin>
-			<groupId>org.codehaus.mojo</groupId>
-			<artifactId>build-helper-maven-plugin</artifactId>
-			<version>1.9.1</version>
-			<executions>
-			  <execution>
-			    <id>add-test-source</id>
-			    <phase>generate-test-sources</phase>
-			    <goals>
-			      <goal>add-test-source</goal>
-			    </goals>
-			    <configuration>
-			      <sources>
-				<source>${basedir}/../src/test/java</source>
-			      </sources>
-			    </configuration>
-			  </execution>
-			</executions>
-		    </plugin>
-
-                    <!-- General surefire configuration. Applies to submodules too. -->
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <configuration>
-                            <!-- Prevent test and server output appearing in console. -->
-                            <redirectTestOutputToFile>${testLogToFile}</redirectTestOutputToFile>
-
-                            <!-- Arquillian's config files. -->
-                            <additionalClasspathElements combine.children="append">
-                                <additionalClasspathElement>${basedir}/../src/test/config/arqWildfly</additionalClasspathElement>
-                            </additionalClasspathElements>
-
-                        </configuration>
-                    </plugin>
-            
-                </plugins>
-            </build>
-            
-            <repositories>
+	    <repositories>
 		<repository>
-		    <id>central</id>
-		    <name>Main Apache Maven Repository</name>
-		    <url>http://central.maven.org/maven2/</url>
-		    <layout>default</layout>
-		    <releases>
-		        <enabled>true</enabled>
-		        <updatePolicy>never</updatePolicy>
-		    </releases>
-		    <snapshots>
-		        <enabled>false</enabled>
-		        <updatePolicy>never</updatePolicy>
-		    </snapshots>
-		</repository>
-		<repository>
-		    <id>jboss-product-repository</id>
+		    <id>jboss-product-repository-eap7</id>
 		    <name>JBoss Product Repository</name>
 		    <url>http://download.eng.bos.redhat.com/brewroot/repos/jb-eap-7.0-rhel-7-maven-build/latest/maven/</url>
-		    <layout>default</layout>
-		    <releases>
-		        <enabled>true</enabled>
-		        <updatePolicy>never</updatePolicy>
-		    </releases>
-		    <snapshots>
-		        <enabled>false</enabled>
-		        <updatePolicy>never</updatePolicy>
-		    </snapshots>
-		</repository>
-		<repository>
-		    <id>jboss-public-repository-group</id>
-		    <name>JBoss Public Repository Group</name>
-		    <url>http://repository.jboss.org/nexus/content/groups/public/</url>
 		    <layout>default</layout>
 		    <releases>
 		        <enabled>true</enabled>
@@ -684,21 +196,7 @@
 
 	    <pluginRepositories>
 		<pluginRepository>
-		    <id>central</id>
-		    <name>Main Apache Maven Repository</name>
-		    <url>http://central.maven.org/maven2/</url>
-		    <layout>default</layout>
-		    <releases>
-		        <enabled>true</enabled>
-		        <updatePolicy>never</updatePolicy>
-		    </releases>
-		    <snapshots>
-		        <enabled>false</enabled>
-		        <updatePolicy>never</updatePolicy>
-		    </snapshots>
-		</pluginRepository>
-		<pluginRepository>
-		    <id>jboss-product-repository</id>
+		    <id>jboss-product-repository-eap7</id>
 		    <name>JBoss Product Repository</name>
 		    <url>http://download.eng.bos.redhat.com/brewroot/repos/jb-eap-7.0-rhel-7-maven-build/latest/maven/</url>
 		    <layout>default</layout>
@@ -709,180 +207,24 @@
 		    <snapshots>
 		        <enabled>false</enabled>
 		        <updatePolicy>never</updatePolicy>
-		    </snapshots>
-		</pluginRepository>
-		<pluginRepository>
-		    <id>jboss-public-repository-group</id>
-		    <name>JBoss Public Repository Group</name>
-		    <url>http://repository.jboss.org/nexus/content/groups/public/</url>
-		    <releases>
-		        <enabled>true</enabled>
-		    </releases>
-		    <snapshots>
-		        <enabled>true</enabled>
 		    </snapshots>
 		</pluginRepository>
 	    </pluginRepositories>
         </profile>
 
         <profile>
-            <id>wildfly.jdk8.testsuite</id>
+            <id>eap7.testsuite</id>
             <activation>
                 <property>
-                    <name>wildfly.jdk8</name>
+                    <name>eap7</name>
+                    <value>true</value>
                 </property>
             </activation>
-            
-            <dependencies>
-                <dependency>
-                    <groupId>org.wildfly.arquillian</groupId>
-                    <artifactId>wildfly-arquillian-container-managed</artifactId>
-                    <version>${version.org.wildfly.arquillian}</version>
-                </dependency>
-                <dependency>
-		    <groupId>org.wildfly</groupId>
-		    <artifactId>wildfly-arquillian-protocol-jmx</artifactId>
-		    <version>8.2.1.Final</version>
-		</dependency>
-                <dependency>
-                    <groupId>org.jboss.shrinkwrap</groupId>
-                    <artifactId>shrinkwrap-api</artifactId>
-                    <version>1.1.2</version>
-                </dependency>
-                <dependency>
-		    <groupId>org.wildfly</groupId>
-		    <artifactId>wildfly-testsuite-shared</artifactId>
-		    <version>10.0.0.CR4</version>
-		</dependency>
-                <dependency>
-                    <groupId>org.jboss.arquillian.junit</groupId>
-                    <artifactId>arquillian-junit-container</artifactId>
-                    <version>1.1.10.Final</version>
-                </dependency>
-            </dependencies>
-            
-            <modules>
-		<module>ws/jdk8/Wildfly</module>
-	    </modules>
-
-            <build>
-                <plugins>
-            
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-antrun-plugin</artifactId>
-                        <version>1.6</version>
-                        
-                        <executions>
-                            <execution>
-                                <id>prepare</id>
-                                <inherited>false</inherited>
-                                <phase>generate-resources</phase>
-                                <configuration>
-                                    <target>
-                                        <copy todir="wildfly/build/target/" preservelastmodified="true">
-                                            <fileset dir="${jboss.home.env}">
-                                                <include name="**/**"/>
-                                            </fileset>
-                                        </copy>                        
-                                    </target>
-                                </configuration>
-                                <goals>
-                                    <goal>run</goal>
-                                </goals>
-                            </execution>
-                            <execution>
-                                <inherited>false</inherited>
-                                <phase>generate-test-resources</phase>
-                                <configuration>
-                                    <target>
-                                        <copy todir="${workspace}/target/jbossas" preservelastmodified="true">
-                                            <fileset dir="wildfly/build/target">
-                                                <include name="**/**"/>
-                                            </fileset>
-                                        </copy>
-                                        <chmod file="${workspace}/target/jbossas/bin/standalone.sh" perm="777"/>                            
-                                    </target>
-                                </configuration>
-                                <goals>
-                                    <goal>run</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-
-                    <plugin>
-			<groupId>org.codehaus.mojo</groupId>
-			<artifactId>build-helper-maven-plugin</artifactId>
-			<version>1.9.1</version>
-			<executions>
-			  <execution>
-			    <id>add-test-source</id>
-			    <phase>generate-test-sources</phase>
-			    <goals>
-			      <goal>add-test-source</goal>
-			    </goals>
-			    <configuration>
-			      <sources>
-				<source>${basedir}/../src/test/java</source>
-			      </sources>
-			    </configuration>
-			  </execution>
-			</executions>
-		    </plugin>
-
-                    <!-- General surefire configuration. Applies to submodules too. -->
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <configuration>
-                            <!-- Prevent test and server output appearing in console. -->
-                            <redirectTestOutputToFile>${testLogToFile}</redirectTestOutputToFile>
-
-                            <!-- Arquillian's config files. -->
-                            <additionalClasspathElements combine.children="append">
-                                <additionalClasspathElement>${basedir}/../src/test/config/arqWildfly</additionalClasspathElement>
-                            </additionalClasspathElements>
-
-                        </configuration>
-                    </plugin>
-            
-                </plugins>
-            </build>
-            
-            <repositories>
+	    <repositories>
 		<repository>
-		    <id>central</id>
-		    <name>Main Apache Maven Repository</name>
-		    <url>http://central.maven.org/maven2/</url>
-		    <layout>default</layout>
-		    <releases>
-		        <enabled>true</enabled>
-		        <updatePolicy>never</updatePolicy>
-		    </releases>
-		    <snapshots>
-		        <enabled>true</enabled>
-		        <updatePolicy>never</updatePolicy>
-		    </snapshots>
-		</repository>
-		<repository>
-		    <id>jboss-product-repository</id>
+		    <id>jboss-product-repository-eap7</id>
 		    <name>JBoss Product Repository</name>
 		    <url>http://download.eng.bos.redhat.com/brewroot/repos/jb-eap-7.0-rhel-7-maven-build/latest/maven/</url>
-		    <layout>default</layout>
-		    <releases>
-		        <enabled>true</enabled>
-		        <updatePolicy>never</updatePolicy>
-		    </releases>
-		    <snapshots>
-		        <enabled>true</enabled>
-		        <updatePolicy>never</updatePolicy>
-		    </snapshots>
-		</repository>
-		<repository>
-		    <id>jboss-public-repository-group</id>
-		    <name>JBoss Public Repository Group</name>
-		    <url>http://repository.jboss.org/nexus/content/groups/public/</url>
 		    <layout>default</layout>
 		    <releases>
 		        <enabled>true</enabled>
@@ -897,21 +239,7 @@
 
 	    <pluginRepositories>
 		<pluginRepository>
-		    <id>central</id>
-		    <name>Main Apache Maven Repository</name>
-		    <url>http://central.maven.org/maven2/</url>
-		    <layout>default</layout>
-		    <releases>
-		        <enabled>true</enabled>
-		        <updatePolicy>never</updatePolicy>
-		    </releases>
-		    <snapshots>
-		        <enabled>true</enabled>
-		        <updatePolicy>never</updatePolicy>
-		    </snapshots>
-		</pluginRepository>
-		<pluginRepository>
-		    <id>jboss-product-repository</id>
+		    <id>jboss-product-repository-eap7</id>
 		    <name>JBoss Product Repository</name>
 		    <url>http://download.eng.bos.redhat.com/brewroot/repos/jb-eap-7.0-rhel-7-maven-build/latest/maven/</url>
 		    <layout>default</layout>
@@ -920,24 +248,12 @@
 		        <updatePolicy>never</updatePolicy>
 		    </releases>
 		    <snapshots>
-		        <enabled>true</enabled>
+		        <enabled>false</enabled>
 		        <updatePolicy>never</updatePolicy>
-		    </snapshots>
-		</pluginRepository>
-		<pluginRepository>
-		    <id>jboss-public-repository-group</id>
-		    <name>JBoss Public Repository Group</name>
-		    <url>http://repository.jboss.org/nexus/content/groups/public/</url>
-		    <releases>
-		        <enabled>true</enabled>
-		    </releases>
-		    <snapshots>
-		        <enabled>true</enabled>
 		    </snapshots>
 		</pluginRepository>
 	    </pluginRepositories>
         </profile>
-
     </profiles>
     
 </project>

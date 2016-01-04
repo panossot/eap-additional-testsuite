@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.jboss.as</groupId>
+        <artifactId>jboss-eap7-additional-jdk8-testsuite-ws</artifactId>
+        <version>1.0.1.Final-SNAPSHOT</version>
+    </parent>
+
+    <!-- ************************************************************************ -->
+    <!-- *********************************** Web ******************************** -->
+    <!-- ************************************************************************ -->
+    <groupId>org.jboss.as</groupId>
+    <artifactId>jboss-eap7-additional-jdk8-testsuite-ws-configuration</artifactId>
+    <version>1.0.1.Final-SNAPSHOT</version>
+
+    <name>jboss eap7 application server additional jdk8 testsuite: ws : configuration</name>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <build>
+
+        <!--
+            Surefire test executions
+        -->
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <executions>
+
+                    <execution>
+                        <id>default-test</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <configuration>
+                            <!-- Tests to execute. -->
+                            <includes>
+                                <include>org/jboss/test/ws/defaultmethods/**/*Test*.java</include>
+                            </includes>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.jboss.as</groupId>
+        <artifactId>jboss-as-additional-jdk8-testsuite-wildfly</artifactId>
+        <version>1.0.1.Final-SNAPSHOT</version>
+    </parent>
+
+    <!-- ************************************************************************ -->
+    <!-- *********************************** Web ******************************** -->
+    <!-- ************************************************************************ -->
+    <groupId>org.jboss.as</groupId>
+    <artifactId>jboss-wildfly-additional-jdk8-testsuite-ws</artifactId>
+    <version>1.0.1.Final-SNAPSHOT</version>
+
+    <name>jboss wildfly application server additional testsuite: ws</name>
+    <packaging>pom</packaging>
+
+    <profiles>
+        
+        <profile>
+            <id>wildfly.ws</id>
+            <activation>
+                <property>
+                    <name>wildfly-jdk8</name>
+                    <value>true</value>
+                </property>
+            </activation>
+
+            <modules>
+                <module>test-configurations</module>
+            </modules>
+
+        </profile>
+
+        <profile>
+            <id>wildfly.ws.onserver</id>
+            <activation>
+                <file>
+                    <exists>../../../../../../wildfly-jdk8-testsuite</exists>
+                </file>
+            </activation>
+            
+            <modules>
+                <module>test-configurations</module>
+            </modules>
+
+        </profile>
+    </profiles>
+    <modules>
+        <module>test-configurations</module>
+    </modules>
+</project>

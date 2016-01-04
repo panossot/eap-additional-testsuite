@@ -1,3 +1,15 @@
 language: java
 jdk:
   - oraclejdk8
+ 
+script:
+  - java -version
+  - mkdir wildfly
+  - cd wildfly
+  - git init
+  - git remote add origin https://github.com/wildfly/wildfly.git
+  - git pull origin 10.0.0.Alpha1
+  - mvn clean install -DskipTests > output2.txt
+  - cd ..
+  - export JBOSS_FOLDER=$PWD'/wildfly/dist/target/wildfly-10.0.0.Alpha1'
+  - mvn clean install -Dwildfly
