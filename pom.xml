@@ -46,7 +46,7 @@
         <developerConnection>scm:git:git@github.com:jboss-set/eap-additional-testsuite.git</developerConnection>
         <url>https://github.com/jboss-set/eap-additional-testsuite</url>
     </scm>
-    
+
     <modules>
         <module>modules</module>
     </modules>
@@ -628,7 +628,7 @@
             </activation>
 	    <repositories>
 		<repository>
-		    <id>jboss-product-repository-eap7</id>
+		    <id>jboss-eap-7.1-product-repository</id>
 		    <name>JBoss Product Repository</name>
 		    <url>http://download.eng.bos.redhat.com/brewroot/repos/jb-eap-7.1-rhel-7-maven-build/latest/maven/</url>
 		    <layout>default</layout>
@@ -645,7 +645,7 @@
 
 	    <pluginRepositories>
 		<pluginRepository>
-		    <id>jboss-product-repository-eap7</id>
+		    <id>jboss-eap-7.1-product-repository</id>
 		    <name>JBoss Product Repository</name>
 		    <url>http://download.eng.bos.redhat.com/brewroot/repos/jb-eap-7.1-rhel-7-maven-build/latest/maven/</url>
 		    <layout>default</layout>
@@ -675,7 +675,7 @@
             </activation>
 	    <repositories>
 		<repository>
-		    <id>jboss-product-repository-eap7</id>
+            <id>jboss-eap-7.1-product-repository</id>
 		    <name>JBoss Product Repository</name>
 		    <url>http://download.eng.bos.redhat.com/brewroot/repos/jb-eap-7.1-rhel-7-maven-build/latest/maven/</url>
 		    <layout>default</layout>
@@ -692,7 +692,7 @@
 
 	    <pluginRepositories>
 		<pluginRepository>
-		    <id>jboss-product-repository-eap7</id>
+            <id>jboss-eap-7.1-product-repository</id>
 		    <name>JBoss Product Repository</name>
 		    <url>http://download.eng.bos.redhat.com/brewroot/repos/jb-eap-7.1-rhel-7-maven-build/latest/maven/</url>
 		    <layout>default</layout>
@@ -722,7 +722,7 @@
             </activation>
 	    <repositories>
 		<repository>
-		    <id>jboss-product-repository-eap7</id>
+		    <id>jboss-product-repository</id>
 		    <name>JBoss Product Repository</name>
 		    <url>http://download.eng.bos.redhat.com/brewroot/repos/jb-eap-7.0-rhel-7-maven-build/latest/maven/</url>
 		    <layout>default</layout>
@@ -739,7 +739,7 @@
 
 	    <pluginRepositories>
 		<pluginRepository>
-		    <id>jboss-product-repository-eap7</id>
+		    <id>jboss-product-repository</id>
 		    <name>JBoss Product Repository</name>
 		    <url>http://download.eng.bos.redhat.com/brewroot/repos/jb-eap-7.0-rhel-7-maven-build/latest/maven/</url>
 		    <layout>default</layout>
@@ -769,7 +769,7 @@
             </activation>
 	    <repositories>
 		<repository>
-		    <id>jboss-product-repository-eap7</id>
+		    <id>jboss-product-repository</id>
 		    <name>JBoss Product Repository</name>
 		    <url>http://download.eng.bos.redhat.com/brewroot/repos/jb-eap-7.0-rhel-7-maven-build/latest/maven/</url>
 		    <layout>default</layout>
@@ -786,7 +786,7 @@
 
 	    <pluginRepositories>
 		<pluginRepository>
-		    <id>jboss-product-repository-eap7</id>
+            <id>jboss-product-repository</id>
 		    <name>JBoss Product Repository</name>
 		    <url>http://download.eng.bos.redhat.com/brewroot/repos/jb-eap-7.0-rhel-7-maven-build/latest/maven/</url>
 		    <layout>default</layout>
@@ -816,7 +816,7 @@
             </activation>
 	    <repositories>
 		<repository>
-		    <id>jboss-product-repository-eap7</id>
+		    <id>jboss-product-repository</id>
 		    <name>JBoss Product Repository</name>
 		    <url>http://download.eng.bos.redhat.com/brewroot/repos/jb-eap-7.0-rhel-7-maven-build/latest/maven/</url>
 		    <layout>default</layout>
@@ -833,7 +833,7 @@
 
 	    <pluginRepositories>
 		<pluginRepository>
-		    <id>jboss-product-repository-eap7</id>
+		    <id>jboss-product-repository</id>
 		    <name>JBoss Product Repository</name>
 		    <url>http://download.eng.bos.redhat.com/brewroot/repos/jb-eap-7.0-rhel-7-maven-build/latest/maven/</url>
 		    <layout>default</layout>
@@ -925,31 +925,31 @@
 	        </executions>
 	    </plugin>
 
-            <plugin>  
-	        <groupId>org.codehaus.mojo</groupId>  
-	        <artifactId>exec-maven-plugin</artifactId>  
-	        <version>1.1.1</version>  
-	        <executions>  
-	            <execution>  
-	                <phase>test</phase>  
-	                <goals>  
-		            <goal>java</goal>  
-	                </goals>  
-	            </execution>  
-	       </executions>  
-               <configuration>  
-		   <mainClass>org.jboss.eap.additional.testsuite.source.distribution.AdditionalTestsuiteDistributeSources</mainClass>  
-		   <arguments>  
-		       <argument>${basedir}</argument>  
-		       <argument>${basedir}/modules/src/main/java</argument> 
-                       <argument>${serverDir}</argument>  
+            <plugin>
+	        <groupId>org.codehaus.mojo</groupId>
+	        <artifactId>exec-maven-plugin</artifactId>
+	        <version>1.1.1</version>
+	        <executions>
+	            <execution>
+	                <phase>test</phase>
+	                <goals>
+		            <goal>java</goal>
+	                </goals>
+	            </execution>
+	       </executions>
+               <configuration>
+		   <mainClass>org.jboss.eap.additional.testsuite.source.distribution.AdditionalTestsuiteDistributeSources</mainClass>
+		   <arguments>
+		       <argument>${basedir}</argument>
+		       <argument>${basedir}/modules/src/main/java</argument>
+                       <argument>${serverDir}</argument>
                        <argument>${JBOSS_VERSION}</argument>
                        <argument>versionOrder</argument>
-		   </arguments>  
-	       </configuration>  
+		   </arguments>
+	       </configuration>
 	    </plugin>
 
        </plugins>
    </build>
-    
+
 </project>
