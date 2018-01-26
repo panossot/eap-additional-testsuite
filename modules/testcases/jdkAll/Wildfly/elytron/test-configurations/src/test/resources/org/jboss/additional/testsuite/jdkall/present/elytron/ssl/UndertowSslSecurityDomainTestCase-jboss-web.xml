@@ -1,4 +1,0 @@
-<jboss-web>
-    <security-domain>UndertowSslSecurityDomainTestCase</security-domain>
-    <context-root>UndertowSslSecurityDomainTestCase</context-root>
-</jboss-web>
