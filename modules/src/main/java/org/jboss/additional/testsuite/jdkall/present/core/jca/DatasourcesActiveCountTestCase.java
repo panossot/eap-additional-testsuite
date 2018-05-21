@@ -53,7 +53,7 @@ import org.junit.runner.RunWith;
  */
 @RunWith(Arquillian.class)
 @RunAsClient
-@EapAdditionalTestsuite({"modules/testcases/jdkAll/Eap71x-Proposed/management/src/main/java#7.1.4","modules/testcases/jdkAll/Eap71x/management/src/main/java#7.1.4","modules/testcases/jdkAll/Wildfly/management/src/main/java#14.0.0"})
+//@EapAdditionalTestsuite({"modules/testcases/jdkAll/Eap71x-Proposed/management/src/main/java#7.1.4","modules/testcases/jdkAll/Eap71x/management/src/main/java#7.1.4","modules/testcases/jdkAll/Wildfly/management/src/main/java#14.0.0"})
 public class DatasourcesActiveCountTestCase extends AbstractCliTestBase {
 
    private static final String OP_PATTERN = "/subsystem=datasources/data-source=ExampleDS:write-attribute(name=%s,value=%s)";
