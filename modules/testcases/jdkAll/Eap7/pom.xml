@@ -59,8 +59,9 @@
                     <scope>compile</scope>
                 </dependency>
                 <dependency>
-                    <groupId>org.jboss.eap</groupId>
+                    <groupId>org.wildfly</groupId>
                     <artifactId>wildfly-testsuite-shared</artifactId>
+                    <version>12.0.0.Final</version>
                     <scope>compile</scope>
                 </dependency>
                 <dependency>
