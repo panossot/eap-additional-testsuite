@@ -68,6 +68,7 @@
 		            <!-- Tests to execute. -->
 		            <includes>
 		                <include>org/jboss/additional/testsuite/jdkall/present/management/**/*TestCase.java</include>
+                                <include>org/jboss/additional/testsuite/jdkall/present/core/**/*TestCase.java</include>
 		            </includes> 
 		        </configuration>
 		    </execution>
