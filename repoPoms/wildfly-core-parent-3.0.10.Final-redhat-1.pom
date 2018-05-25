@@ -670,7 +670,7 @@
             <dependency>
                 <groupId>org.wildfly.core</groupId>
                 <artifactId>wildfly-core-test-runner</artifactId>
-                <version>3.0.10.Final-redhat-1</version>
+                <version>3.0.10.Final</version>
             </dependency>
 
             <dependency>
@@ -901,13 +901,13 @@
                 <groupId>org.wildfly.core</groupId>
                 <artifactId>wildfly-subsystem-test</artifactId>
                 <type>pom</type>
-                <version>3.0.10.Final-redhat-1</version>
+                <version>3.0.10.Final</version>
             </dependency>
 
             <dependency>
                 <groupId>org.wildfly.core</groupId>
                 <artifactId>wildfly-subsystem-test-framework</artifactId>
-                <version>3.0.10.Final-redhat-1</version>
+                <version>3.0.10.Final</version>
             </dependency>
 
             <dependency>
@@ -920,13 +920,13 @@
                 <groupId>org.wildfly.core</groupId>
                 <artifactId>wildfly-vault-test-feature-pack</artifactId>
                 <type>pom</type>
-                <version>3.0.10.Final-redhat-1</version>
+                <version>3.0.10.Final</version>
             </dependency>
             <dependency>
                 <groupId>org.wildfly.core</groupId>
                 <artifactId>wildfly-vault-test-feature-pack</artifactId>
                 <type>zip</type>
-                <version>3.0.10.Final-redhat-1</version>
+                <version>3.0.10.Final</version>
             </dependency>
 
             <dependency>
