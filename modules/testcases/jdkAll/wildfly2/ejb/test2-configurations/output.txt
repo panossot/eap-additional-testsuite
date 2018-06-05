@@ -1,0 +1,22 @@
+=========================================================================
+
+  JBoss Bootstrap Environment
+
+  JBOSS_HOME: /opt/eap-additional-testsuite/modules/servers/wildfly/build/target/jbossas
+
+  JAVA: /opt/jdk1.8.0_171/bin/java
+
+  JAVA_OPTS:  -server -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true
+
+=========================================================================
+
+[0m20:12:24,610 INFO  [org.jboss.modules] (main) JBoss Modules version 1.8.5.Final
+[0m[0m20:12:27,707 INFO  [org.jboss.msc] (main) JBoss MSC version 1.4.2.Final
+[0m[0m20:12:27,733 INFO  [org.jboss.threads] (main) JBoss Threads version 2.3.2.Final
+[0m[0m20:12:28,257 INFO  [org.jboss.as] (MSC service thread 1-1) WFLYSRV0049: WildFly Full 13.0.0.Alpha1-SNAPSHOT (WildFly Core 5.0.0.Beta2) starting
+[0m[0m20:12:41,208 INFO  [org.jboss.as.controller.management-deprecated] (Controller Boot Thread) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/core-service=management/management-interface=http-interface' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+[0m[0m20:12:41,267 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 11) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/subsystem=undertow/server=default-server/https-listener=https' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+[0m[0m20:12:41,238 INFO  [org.wildfly.security] (ServerService Thread Pool -- 30) ELY00001: WildFly Elytron version 1.3.2.Final
+[0m[0m20:12:49,312 INFO  [org.jboss.as.server] (Thread-2) WFLYSRV0220: Server shutdown has been requested via an OS signal
+[0m[0m20:12:49,376 INFO  [org.jboss.as] (MSC service thread 1-3) WFLYSRV0050: WildFly Full 13.0.0.Alpha1-SNAPSHOT (WildFly Core 5.0.0.Beta2) stopped in 61ms
+[0m

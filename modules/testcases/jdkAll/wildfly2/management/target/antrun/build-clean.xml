@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="clean"  >
+<target name="clean" description="clean">
+  <delete includeEmptyDirs="true" failonerror="false">
+    <fileset includes="**/wildfly2/**/src/main/java/" dir="/opt/eap-additional-testsuite/modules/testcases/jdkAll/wildfly2/management/modules/testcases"/>
+  </delete>
+</target>
+</project>

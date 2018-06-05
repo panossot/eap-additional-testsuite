@@ -1,0 +1,195 @@
+Jun 05, 2018 11:07:13 AM org.jboss.as.arquillian.container.managed.ManagedDeployableContainer startInternal
+WARNING: Bundles path is deprecated and no longer used.
+Jun 05, 2018 11:07:13 AM org.jboss.as.arquillian.container.managed.ManagedDeployableContainer startInternal
+INFO: Starting container with: [/opt/jdk1.8.0_141/bin/java, -D[Standalone], -Djboss.inst=/home/panos/Downloads/eap-additional-testsuite-20180604T104649Z-001/eap-additional-testsuite/modules/testcases/jdkAll/wildfly2/basic/test-configurations/../../../../../servers/wildfly/build/target/jbossas, -Dtest.bind.address=127.0.0.1, -ea, -Djboss.home.dir=/home/panos/Downloads/eap-additional-testsuite-20180604T104649Z-001/eap-additional-testsuite/modules/servers/wildfly/build/target/jbossas, -Dorg.jboss.boot.log.file=/home/panos/Downloads/eap-additional-testsuite-20180604T104649Z-001/eap-additional-testsuite/modules/servers/wildfly/build/target/jbossas/standalone/log/server.log, -Dlogging.configuration=file:/home/panos/Downloads/eap-additional-testsuite-20180604T104649Z-001/eap-additional-testsuite/modules/servers/wildfly/build/target/jbossas/standalone/configuration/logging.properties, -jar, /home/panos/Downloads/eap-additional-testsuite-20180604T104649Z-001/eap-additional-testsuite/modules/servers/wildfly/build/target/jbossas/jboss-modules.jar, -mp, /home/panos/Downloads/eap-additional-testsuite-20180604T104649Z-001/eap-additional-testsuite/modules/servers/wildfly/build/target/jbossas/modules, org.jboss.as.standalone, -Djboss.home.dir=/home/panos/Downloads/eap-additional-testsuite-20180604T104649Z-001/eap-additional-testsuite/modules/servers/wildfly/build/target/jbossas, -Djboss.server.base.dir=/home/panos/Downloads/eap-additional-testsuite-20180604T104649Z-001/eap-additional-testsuite/modules/servers/wildfly/build/target/jbossas/standalone, -Djboss.server.log.dir=/home/panos/Downloads/eap-additional-testsuite-20180604T104649Z-001/eap-additional-testsuite/modules/servers/wildfly/build/target/jbossas/standalone/log, -Djboss.server.config.dir=/home/panos/Downloads/eap-additional-testsuite-20180604T104649Z-001/eap-additional-testsuite/modules/servers/wildfly/build/target/jbossas/standalone/configuration, -c=standalone.xml]
+[0m11:07:13,884 INFO  [org.jboss.modules] (main) JBoss Modules version 1.8.5.Final
+[0m[0m11:07:14,164 INFO  [org.jboss.msc] (main) JBoss MSC version 1.4.2.Final
+[0m[0m11:07:14,172 INFO  [org.jboss.threads] (main) JBoss Threads version 2.3.2.Final
+[0m[0m11:07:14,274 INFO  [org.jboss.as] (MSC service thread 1-2) WFLYSRV0049: WildFly Full 13.0.0.Beta2-SNAPSHOT (WildFly Core 5.0.0.Beta3) starting
+[0m[33m11:07:15,119 WARN  [org.jboss.as.clustering.infinispan] (Controller Boot Thread) WFLYCLINF0004: The 'strategy' attribute of the 'eviction' element is no longer supported and will be ignored
+[0m[33m11:07:15,120 WARN  [org.jboss.as.clustering.infinispan] (Controller Boot Thread) WFLYCLINF0004: The 'strategy' attribute of the 'eviction' element is no longer supported and will be ignored
+[0m[0m11:07:15,395 INFO  [org.jboss.as.controller.management-deprecated] (Controller Boot Thread) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/core-service=management/management-interface=http-interface' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+[0m[0m11:07:15,410 INFO  [org.wildfly.security] (ServerService Thread Pool -- 4) ELY00001: WildFly Elytron version 1.3.2.Final
+[0m[0m11:07:15,421 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 4) WFLYCTL0028: Attribute 'permissions' in the resource at address '/subsystem=elytron/constant-permission-mapper=constant-permission-mapper' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+[0m[0m11:07:15,423 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 29) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/subsystem=undertow/server=default-server/https-listener=https' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+[0m[0m11:07:15,430 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) WFLYDS0015: Re-attempting failed deployment CDIAppMaven.war
+[0m[0m11:07:15,485 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+[0m[0m11:07:15,499 INFO  [org.xnio] (MSC service thread 1-8) XNIO version 3.6.3.Final
+[0m[0m11:07:15,507 INFO  [org.xnio.nio] (MSC service thread 1-8) XNIO NIO Implementation Version 3.6.3.Final
+[0m[0m11:07:15,535 INFO  [org.jboss.as.ee] (ServerService Thread Pool -- 38) WFLYEE0119: The system property 'ee8.preview.mode' is NOT set to 'true'. For provided EE 8 APIs where the EE 8 version of the API differs from what is supported in EE 7, the EE 7 variant of the API will be used. Support for this setting will be removed once all EE 8 APIs are provided and certified.
+[0m[0m11:07:15,547 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 41) WFLYIO001: Worker 'default' has auto-configured to 16 core threads with 128 task threads based on your 8 available processors
+[0m[0m11:07:15,552 INFO  [org.jboss.remoting] (MSC service thread 1-6) JBoss Remoting version 5.0.7.Final
+[0m[0m11:07:15,557 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 42) WFLYCLINF0001: Activating Infinispan subsystem.
+[0m[0m11:07:15,578 INFO  [org.jboss.as.jaxrs] (ServerService Thread Pool -- 43) WFLYRS0016: RESTEasy version 3.5.1.Final
+[0m[0m11:07:15,589 INFO  [org.jboss.as.connector] (MSC service thread 1-2) WFLYJCA0009: Starting JCA Subsystem (WildFly/IronJacamar 1.4.9.Final)
+[0m[0m11:07:15,592 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 36) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 1.4)
+[0m[0m11:07:15,595 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 48) WFLYJSF0007: Activated the following JSF Implementations: [main]
+[0m[0m11:07:15,596 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0018: Started Driver service with driver-name = h2
+[0m[0m11:07:15,607 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 50) WFLYNAM0001: Activating Naming Subsystem
+[0m[0m11:07:15,618 INFO  [org.jboss.as.naming] (MSC service thread 1-1) WFLYNAM0003: Starting Naming Service
+[0m[0m11:07:15,620 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-1) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+[0m[33m11:07:15,646 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 58) WFLYTX0013: The node-identifier attribute on the /subsystem=transactions is set to the default value. This is a danger for environments running multiple servers. Please make sure the attribute value is unique.
+[0m[0m11:07:15,651 INFO  [org.jboss.as.ejb3] (MSC service thread 1-8) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 32 (per class), which is derived from the number of CPUs on this host.
+[0m[0m11:07:15,652 INFO  [org.jboss.as.ejb3] (MSC service thread 1-4) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 128 (per class), which is derived from thread worker pool sizing.
+[0m[0m11:07:15,664 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 57) WFLYSEC0002: Activating Security Subsystem
+[0m[0m11:07:15,666 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 60) WFLYWS0002: Activating WebServices Extension
+[0m[0m11:07:15,670 INFO  [org.jboss.as.security] (MSC service thread 1-8) WFLYSEC0001: Current PicketBox version=5.0.2.Final
+[0m[0m11:07:15,710 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0003: Undertow 2.0.7.Final starting
+[0m[0m11:07:15,793 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 59) WFLYUT0014: Creating file handler for path '/home/panos/Downloads/eap-additional-testsuite-20180604T104649Z-001/eap-additional-testsuite/modules/servers/wildfly/build/target/jbossas/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+[0m[0m11:07:15,803 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0012: Started server default-server.
+[0m[0m11:07:15,804 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0018: Host default-host starting
+[0m[0m11:07:15,846 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0006: Undertow HTTP listener default listening on 127.0.0.1:8080
+[0m[0m11:07:15,898 INFO  [org.jboss.as.ejb3] (MSC service thread 1-5) WFLYEJB0493: EJB subsystem suspension complete
+[0m[0m11:07:15,952 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-8) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+[0m[0m11:07:15,958 INFO  [org.jboss.as.patching] (MSC service thread 1-5) WFLYPAT0050: WildFly Full cumulative patch ID is: base, one-off patches include: none
+[0m[33m11:07:15,971 WARN  [org.jboss.as.domain.management.security] (MSC service thread 1-1) WFLYDM0111: Keystore /home/panos/Downloads/eap-additional-testsuite-20180604T104649Z-001/eap-additional-testsuite/modules/servers/wildfly/build/target/jbossas/standalone/configuration/application.keystore not found, it will be auto generated on first use with a self signed certificate for host localhost
+[0m[0m11:07:15,977 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-1) WFLYDS0013: Started FileSystemDeploymentService for directory /home/panos/Downloads/eap-additional-testsuite-20180604T104649Z-001/eap-additional-testsuite/modules/servers/wildfly/build/target/jbossas/standalone/deployments
+[0m[0m11:07:15,983 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0027: Starting deployment of "server.jar" (runtime-name: "server.jar")
+[0m[0m11:07:15,983 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0027: Starting deployment of "helloWorld2.ear" (runtime-name: "helloWorld2.ear")
+[0m[0m11:07:15,984 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0027: Starting deployment of "Application2-ear-0.0.1-SNAPSHOT.ear" (runtime-name: "Application2-ear-0.0.1-SNAPSHOT.ear")
+[0m[0m11:07:15,985 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0027: Starting deployment of "CDIAppMaven.war" (runtime-name: "CDIAppMaven.war")
+[0m[0m11:07:15,985 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0027: Starting deployment of "Application1-ear-0.0.1-SNAPSHOT.ear" (runtime-name: "Application1-ear-0.0.1-SNAPSHOT.ear")
+[0m[0m11:07:15,985 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0027: Starting deployment of "helloWorld.ear" (runtime-name: "helloWorld.ear")
+[0m[0m11:07:16,326 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0207: Starting subdeployment (runtime-name: "helloWorld2-ejb.jar")
+[0m[0m11:07:16,327 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0207: Starting subdeployment (runtime-name: "helloWorld-ejb.jar")
+[0m[0m11:07:16,329 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0207: Starting subdeployment (runtime-name: "Application2-web-0.0.1-SNAPSHOT.war")
+[0m[0m11:07:16,330 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0207: Starting subdeployment (runtime-name: "Application1-web-0.0.1-SNAPSHOT.war")
+[0m[0m11:07:16,369 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0006: Undertow HTTPS listener https listening on 127.0.0.1:8443
+[0m[0m11:07:16,431 INFO  [org.jboss.ws.common.management] (MSC service thread 1-3) JBWS022052: Starting JBossWS 5.2.1.Final (Apache CXF 3.2.4.jbossorg-1) 
+[0m[31m11:07:16,434 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-4) MSC000001: Failed to start service jboss.deployment.unit."CDIAppMaven.war".PARSE: org.jboss.msc.service.StartException in service jboss.deployment.unit."CDIAppMaven.war".PARSE: WFLYSRV0153: Failed to process phase PARSE of deployment "CDIAppMaven.war"
+	at org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:150)
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1736)
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.execute(ServiceControllerImpl.java:1698)
+	at org.jboss.msc.service.ServiceControllerImpl$ControllerTask.run(ServiceControllerImpl.java:1556)
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1985)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1487)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1378)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.jboss.as.server.deployment.DeploymentUnitProcessingException: org.jboss.modules.ModuleNotFoundException: mycompany.test.CDIJarMaven:moduloAliasError
+	at org.jboss.as.server.deployment.annotation.CompositeIndexProcessor.deploy(CompositeIndexProcessor.java:107)
+	at org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:143)
+	... 8 more
+Caused by: org.jboss.modules.ModuleNotFoundException: mycompany.test.CDIJarMaven:moduloAliasError
+	at org.jboss.modules.ModuleLoader.loadModule(ModuleLoader.java:294)
+	at org.jboss.modules.ModuleLoader.loadModule(ModuleLoader.java:280)
+	at org.jboss.as.server.deployment.annotation.CompositeIndexProcessor.deploy(CompositeIndexProcessor.java:97)
+	... 9 more
+
+[0m[0m11:07:16,739 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) WFLYWELD0003: Processing weld deployment helloWorld.ear
+[0m[0m11:07:16,749 INFO  [org.jboss.weld.deployer] (MSC service thread 1-5) WFLYWELD0003: Processing weld deployment server.jar
+[0m[0m11:07:16,786 INFO  [org.jboss.weld.deployer] (MSC service thread 1-8) WFLYWELD0003: Processing weld deployment helloWorld2.ear
+[0m[33m11:07:16,806 WARN  [org.jboss.as.logging] (MSC service thread 1-2) WFLYLOG0010: Logging profile 'LoggingProfile1' was specified for deployment 'ResourceRoot [root="/content/Application1-ear-0.0.1-SNAPSHOT.ear"]' but was not found. Using system logging configuration.
+[0m[33m11:07:16,806 WARN  [org.jboss.as.logging] (MSC service thread 1-7) WFLYLOG0010: Logging profile 'LoggingProfile2' was specified for deployment 'ResourceRoot [root="/content/Application2-ear-0.0.1-SNAPSHOT.ear"]' but was not found. Using system logging configuration.
+[0m[0m11:07:16,837 INFO  [org.hibernate.validator.internal.util.Version] (MSC service thread 1-8) HV000001: Hibernate Validator 5.3.6.Final
+[0m[0m11:07:16,935 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-5) WFLYEJB0473: JNDI bindings for session bean named 'HelloBean' in deployment unit 'deployment "server.jar"' are as follows:
+
+	java:global/server/HelloBean!ejb.HelloBeanRemote
+	java:app/server/HelloBean!ejb.HelloBeanRemote
+	java:module/HelloBean!ejb.HelloBeanRemote
+	java:jboss/exported/server/HelloBean!ejb.HelloBeanRemote
+	ejb:server/HelloBean!ejb.HelloBeanRemote
+	java:global/server/HelloBean
+	java:app/server/HelloBean
+	java:module/HelloBean
+
+[0m[0m11:07:16,947 INFO  [org.jboss.weld.deployer] (MSC service thread 1-5) WFLYWELD0003: Processing weld deployment helloWorld-ejb.jar
+[0m[0m11:07:16,949 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-5) WFLYEJB0473: JNDI bindings for session bean named 'HelloBean' in deployment unit 'subdeployment "helloWorld-ejb.jar" of deployment "helloWorld.ear"' are as follows:
+
+	java:global/helloWorld/helloWorld-ejb/HelloBean!com.jboss.examples.ejb3.Hello
+	java:app/helloWorld-ejb/HelloBean!com.jboss.examples.ejb3.Hello
+	java:module/HelloBean!com.jboss.examples.ejb3.Hello
+	java:jboss/exported/helloWorld/helloWorld-ejb/HelloBean!com.jboss.examples.ejb3.Hello
+	ejb:helloWorld/helloWorld-ejb/HelloBean!com.jboss.examples.ejb3.Hello
+	java:global/helloWorld/helloWorld-ejb/HelloBean
+	java:app/helloWorld-ejb/HelloBean
+	java:module/HelloBean
+
+[0m[0m11:07:16,955 INFO  [org.jboss.weld.deployer] (MSC service thread 1-5) WFLYWELD0003: Processing weld deployment helloWorld2-ejb.jar
+[0m[0m11:07:16,956 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-5) WFLYEJB0473: JNDI bindings for session bean named 'HelloBean2' in deployment unit 'subdeployment "helloWorld2-ejb.jar" of deployment "helloWorld2.ear"' are as follows:
+
+	java:global/helloWorld2/helloWorld2-ejb/HelloBean2!com.jboss.examples.ejb3.Hello
+	java:app/helloWorld2-ejb/HelloBean2!com.jboss.examples.ejb3.Hello
+	java:module/HelloBean2!com.jboss.examples.ejb3.Hello
+	java:jboss/exported/helloWorld2/helloWorld2-ejb/HelloBean2!com.jboss.examples.ejb3.Hello
+	ejb:helloWorld2/helloWorld2-ejb/HelloBean2!com.jboss.examples.ejb3.Hello
+	java:global/helloWorld2/helloWorld2-ejb/HelloBean2
+	java:app/helloWorld2-ejb/HelloBean2
+	java:module/HelloBean2
+
+[0m[0m11:07:17,006 INFO  [org.jboss.weld.Version] (MSC service thread 1-5) WELD-000900: 3.0.4 (Final)
+[0m[0m11:07:17,184 INFO  [org.infinispan.factories.GlobalComponentRegistry] (MSC service thread 1-7) ISPN000128: Infinispan version: Infinispan 'Gaina' 9.2.3.Final
+[0m[0m11:07:17,348 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 62) WFLYCLINF0002: Started client-mappings cache from ejb container
+[0m[33m11:07:17,449 WARN  [org.jboss.weld.Bootstrap] (MSC service thread 1-3) WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.hibernate.validator.internal.cdi.interceptor.ValidationInterceptor is deprecated from CDI 1.1!
+[0m[33m11:07:17,450 WARN  [org.jboss.weld.Bootstrap] (MSC service thread 1-5) WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.jberet.creation.BatchBeanProducer is deprecated from CDI 1.1!
+[0m[33m11:07:17,463 WARN  [org.jboss.weld.Bootstrap] (MSC service thread 1-3) WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.jberet.creation.BatchBeanProducer is deprecated from CDI 1.1!
+[0m[33m11:07:17,467 WARN  [org.jboss.weld.Bootstrap] (MSC service thread 1-8) WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.jberet.creation.BatchBeanProducer is deprecated from CDI 1.1!
+[0m[33m11:07:17,469 WARN  [org.jboss.weld.Bootstrap] (MSC service thread 1-5) WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.hibernate.validator.internal.cdi.interceptor.ValidationInterceptor is deprecated from CDI 1.1!
+[0m[33m11:07:17,477 WARN  [org.jboss.weld.Bootstrap] (MSC service thread 1-8) WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class org.hibernate.validator.internal.cdi.interceptor.ValidationInterceptor is deprecated from CDI 1.1!
+[0m[0m11:07:17,491 INFO  [com.test.servlets.LogsTestServlet] (ServerService Thread Pool -- 66) Servlet for Application 2 initialized
+[0m[0m11:07:17,492 INFO  [com.test.servlets.LogsTestServlet] (ServerService Thread Pool -- 65) Servlet for Application 1 initialized
+[0m[0m11:07:17,492 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 65) WFLYUT0021: Registered web context: '/Application1' for server 'default-server'
+[0m[0m11:07:17,492 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 66) WFLYUT0021: Registered web context: '/Application2' for server 'default-server'
+[0m[0m11:07:17,737 INFO  [class com.jboss.examples.ejb3.HelloBean2] (ServerService Thread Pool -- 65) PostConstruct on : com.jboss.examples.ejb3.HelloBean2
+[0m[31m11:07:17,749 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) WFLYCTL0013: Operation ("deploy") failed - address: ([("deployment" => "CDIAppMaven.war")]) - failure description: {"WFLYCTL0080: Failed services" => {"jboss.deployment.unit.\"CDIAppMaven.war\".PARSE" => "WFLYSRV0153: Failed to process phase PARSE of deployment \"CDIAppMaven.war\"
+    Caused by: org.jboss.as.server.deployment.DeploymentUnitProcessingException: org.jboss.modules.ModuleNotFoundException: mycompany.test.CDIJarMaven:moduloAliasError
+    Caused by: org.jboss.modules.ModuleNotFoundException: mycompany.test.CDIJarMaven:moduloAliasError"}}
+[0m[0m11:07:17,757 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 37) WFLYSRV0010: Deployed "Application2-ear-0.0.1-SNAPSHOT.ear" (runtime-name : "Application2-ear-0.0.1-SNAPSHOT.ear")
+[0m[0m11:07:17,757 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 37) WFLYSRV0010: Deployed "helloWorld.ear" (runtime-name : "helloWorld.ear")
+[0m[0m11:07:17,757 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 37) WFLYSRV0010: Deployed "CDIAppMaven.war" (runtime-name : "CDIAppMaven.war")
+[0m[0m11:07:17,757 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 37) WFLYSRV0010: Deployed "Application1-ear-0.0.1-SNAPSHOT.ear" (runtime-name : "Application1-ear-0.0.1-SNAPSHOT.ear")
+[0m[0m11:07:17,758 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 37) WFLYSRV0010: Deployed "server.jar" (runtime-name : "server.jar")
+[0m[0m11:07:17,758 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 37) WFLYSRV0010: Deployed "helloWorld2.ear" (runtime-name : "helloWorld2.ear")
+[0m[0m11:07:17,758 INFO  [org.jboss.as.controller] (Controller Boot Thread) WFLYCTL0183: Service status report
+WFLYCTL0186:   Services which failed to start:      service jboss.deployment.unit."CDIAppMaven.war".PARSE: WFLYSRV0153: Failed to process phase PARSE of deployment "CDIAppMaven.war"
+
+[0m[0m11:07:17,797 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0212: Resuming server
+[0m[0m11:07:17,799 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
+[0m[0m11:07:17,799 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
+[0m[31m11:07:17,799 ERROR [org.jboss.as] (Controller Boot Thread) WFLYSRV0026: WildFly Full 13.0.0.Beta2-SNAPSHOT (WildFly Core 5.0.0.Beta3) started (with errors) in 4274ms - Started 815 of 1012 services (1 services failed or missing dependencies, 343 services are lazy, passive or on-demand)
+[0mJun 05, 2018 11:07:18 AM org.jboss.arquillian.core.impl.ObserverImpl resolveArguments
+WARNING: Argument 2 for ArquillianServiceDeployer.doServiceDeploy is null. It won't be invoked.
+[0m11:07:18,614 INFO  [org.jboss.as.repository] (management-handler-thread - 1) WFLYDR0001: Content added at location /home/panos/Downloads/eap-additional-testsuite-20180604T104649Z-001/eap-additional-testsuite/modules/servers/wildfly/build/target/jbossas/standalone/data/content/16/a387e8873470979e8915d5f2281d2aa500dd7c/content
+[0m[0m11:07:18,617 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0027: Starting deployment of "test.war" (runtime-name: "test.war")
+[0m[33m11:07:18,828 WARN  [org.jboss.weld.deployer] (MSC service thread 1-2) WFLYWELD0013: Deployment test.war contains CDI annotations but no bean archive was found (no beans.xml or class with bean defining annotations was present).
+[0m[0m11:07:18,846 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 9) WFLYUT0021: Registered web context: '/test' for server 'default-server'
+[0m[0m11:07:18,900 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0010: Deployed "test.war" (runtime-name : "test.war")
+[0m[0m11:07:18,900 INFO  [org.jboss.as.controller] (management-handler-thread - 1) WFLYCTL0183: Service status report
+WFLYCTL0186:   Services which failed to start:      service jboss.deployment.unit."CDIAppMaven.war".PARSE: WFLYSRV0153: Failed to process phase PARSE of deployment "CDIAppMaven.war"
+
+[0m[0m11:07:19,269 INFO  [org.jboss.arquillian.testenricher.cdi.container.BeanManagerProducer] (default task-2) BeanManager not found.
+[0m[0m11:07:19,331 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 9) WFLYUT0022: Unregistered web context: '/test' from server 'default-server'
+[0m[0m11:07:19,371 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0028: Stopped deployment test.war (runtime-name: test.war) in 46ms
+[0m[0m11:07:19,396 INFO  [org.jboss.as.repository] (management-handler-thread - 1) WFLYDR0002: Content removed from location /home/panos/Downloads/eap-additional-testsuite-20180604T104649Z-001/eap-additional-testsuite/modules/servers/wildfly/build/target/jbossas/standalone/data/content/16/a387e8873470979e8915d5f2281d2aa500dd7c/content
+[0m[0m11:07:19,397 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0009: Undeployed "test.war" (runtime-name: "test.war")
+[0m[0m11:07:19,397 INFO  [org.jboss.as.controller] (management-handler-thread - 1) WFLYCTL0183: Service status report
+WFLYCTL0186:   Services which failed to start:      service jboss.deployment.unit."CDIAppMaven.war".PARSE: WFLYSRV0153: Failed to process phase PARSE of deployment "CDIAppMaven.war"
+
+[0mJun 05, 2018 11:07:19 AM org.jboss.arquillian.core.impl.ObserverImpl resolveArguments
+WARNING: Argument 2 for ArquillianServiceDeployer.undeploy is null. It won't be invoked.
+[0m11:07:19,443 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0236: Suspending server with no timeout.
+[0m[0m11:07:19,445 INFO  [org.jboss.as.ejb3] (management-handler-thread - 1) WFLYEJB0493: EJB subsystem suspension complete
+[0m[0m11:07:19,448 INFO  [org.jboss.as.server] (Management Triggered Shutdown) WFLYSRV0241: Shutting down in response to management operation 'shutdown'
+[0m[0m11:07:19,473 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 4) WFLYUT0022: Unregistered web context: '/Application2' from server 'default-server'
+[0m[0m11:07:19,486 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 65) WFLYUT0022: Unregistered web context: '/Application1' from server 'default-server'
+[0m[0m11:07:19,489 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0028: Stopped deployment CDIAppMaven.war (runtime-name: CDIAppMaven.war) in 22ms
+[0m[0m11:07:19,501 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0019: Host default-host stopping
+[0m[0m11:07:19,514 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0208: Stopped subdeployment (runtime-name: Application2-web-0.0.1-SNAPSHOT.war) in 48ms
+[0m[0m11:07:19,518 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-2) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
+[0m[0m11:07:19,519 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0028: Stopped deployment Application2-ear-0.0.1-SNAPSHOT.ear (runtime-name: Application2-ear-0.0.1-SNAPSHOT.ear) in 60ms
+[0m[0m11:07:19,521 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0208: Stopped subdeployment (runtime-name: Application1-web-0.0.1-SNAPSHOT.war) in 55ms
+[0m[0m11:07:19,521 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-7) WFLYJCA0019: Stopped Driver service with driver-name = h2
+[0m[0m11:07:19,527 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0028: Stopped deployment Application1-ear-0.0.1-SNAPSHOT.ear (runtime-name: Application1-ear-0.0.1-SNAPSHOT.ear) in 69ms
+[0m[0m11:07:19,528 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0028: Stopped deployment server.jar (runtime-name: server.jar) in 70ms
+[0m[0m11:07:19,528 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0208: Stopped subdeployment (runtime-name: helloWorld2-ejb.jar) in 74ms
+[0m[0m11:07:19,529 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0028: Stopped deployment helloWorld2.ear (runtime-name: helloWorld2.ear) in 63ms
+[0m[0m11:07:19,530 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 15) WFLYCLINF0003: Stopped client-mappings cache from ejb container
+[0m[0m11:07:19,533 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0208: Stopped subdeployment (runtime-name: helloWorld-ejb.jar) in 76ms
+[0m[0m11:07:19,534 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0008: Undertow HTTPS listener https suspending
+[0m[0m11:07:19,534 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) WFLYUT0008: Undertow HTTP listener default suspending
+[0m[0m11:07:19,534 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0007: Undertow HTTPS listener https stopped, was bound to 127.0.0.1:8443
+[0m[0m11:07:19,534 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0028: Stopped deployment helloWorld.ear (runtime-name: helloWorld.ear) in 65ms
+[0m[0m11:07:19,535 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) WFLYUT0007: Undertow HTTP listener default stopped, was bound to 127.0.0.1:8080
+[0m[0m11:07:19,536 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0004: Undertow 2.0.7.Final stopping
+[0m[0m11:07:19,544 INFO  [org.jboss.as] (MSC service thread 1-8) WFLYSRV0050: WildFly Full 13.0.0.Beta2-SNAPSHOT (WildFly Core 5.0.0.Beta3) stopped in 87ms
+[0m

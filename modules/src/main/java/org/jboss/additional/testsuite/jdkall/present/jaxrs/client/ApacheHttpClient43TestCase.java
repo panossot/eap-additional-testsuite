@@ -37,7 +37,7 @@ import org.jboss.shrinkwrap.api.ShrinkWrap;
  */
 @RunWith(Arquillian.class)
 @RunAsClient
-@EapAdditionalTestsuite({"modules/testcases/jdkAll/Eap7/jaxrs/src/main/java","modules/testcases/jdkAll/Eap71x-Proposed/jaxrs/src/main/java","modules/testcases/jdkAll/Eap71x/jaxrs/src/main/java"})
+@EapAdditionalTestsuite({"modules/testcases/jdkAll/Eap7/jaxrs/src/main/java"})
 public class ApacheHttpClient43TestCase {
 
     private Class engine1 = ApacheHttpClient43Engine.class;

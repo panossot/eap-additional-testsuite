@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <ant antfile="/opt/eap-additional-testsuite/modules/testcases/jdkAll/wildfly2/weld/test-configurations2/../../../../../src/test/scripts/copy-file.xml">
+    <property name="filePath" value="/opt/eap-additional-testsuite/modules/testcases/jdkAll/wildfly2/weld/test-configurations2/../../../../../servers/wildfly/build/target/jbossas/standalone/deployments"/>
+    <property name="fileToCopy" value="/opt/eap-additional-testsuite/modules/testcases/jdkAll/wildfly2/weld/test-configurations2/../../../../../testcases/jdkAll/Wildfly/weld/test-configurations2/src/test/resources/CDIAppMaven.war"/>
+    <target name="copy-file"/>
+  </ant>
+  <ant antfile="/opt/eap-additional-testsuite/modules/testcases/jdkAll/wildfly2/weld/test-configurations2/../../../../../src/test/scripts/copy-dir.xml">
+    <property name="todir" value="/opt/eap-additional-testsuite/modules/testcases/jdkAll/wildfly2/weld/test-configurations2/../../../../../servers/wildfly/build/target/jbossas/modules/system/layers/base"/>
+    <property name="folderToCopy" value="/opt/eap-additional-testsuite/modules/testcases/jdkAll/wildfly2/weld/test-configurations2/../../../../../testcases/jdkAll/Wildfly/weld/test-configurations2/src/test/resources/modules"/>
+    <target name="copy-dir"/>
+  </ant>
+</target>
+</project>

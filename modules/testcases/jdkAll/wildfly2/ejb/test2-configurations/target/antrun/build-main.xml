@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <ant antfile="/opt/eap-additional-testsuite/modules/testcases/jdkAll/wildfly2/ejb/test2-configurations/../../../../../src/test/scripts/copy-file.xml">
+    <property name="filePath" value="/opt/eap-additional-testsuite/modules/testcases/jdkAll/wildfly2/ejb/test2-configurations/../../../../../servers/wildfly/build/target/jbossas/standalone/deployments"/>
+    <property name="fileName" value="server.jar"/>
+    <property name="fileToCopy" value="/opt/eap-additional-testsuite/modules/testcases/jdkAll/wildfly2/ejb/test2-configurations/server.jar"/>
+    <target name="copy-file"/>
+  </ant>
+</target>
+</project>

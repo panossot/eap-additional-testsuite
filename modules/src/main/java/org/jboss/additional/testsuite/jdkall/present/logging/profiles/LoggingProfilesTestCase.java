@@ -39,23 +39,10 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
 
 import javax.servlet.http.HttpServletResponse;
-import org.apache.commons.io.IOUtils;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.impl.client.HttpClients;
 
 import org.junit.Assert;
 
@@ -71,19 +58,15 @@ import org.jboss.as.controller.client.ModelControllerClient;
 import org.jboss.as.controller.client.OperationBuilder;
 import org.jboss.additional.testsuite.jdkall.present.logging.util.AbstractLoggingTest;
 import org.jboss.additional.testsuite.jdkall.present.logging.util.LoggingServlet;
-import org.jboss.arquillian.container.test.api.OperateOnDeployment;
-import org.jboss.as.test.integration.common.HttpRequest;
 import org.jboss.as.test.integration.management.base.AbstractMgmtServerSetupTask;
 import org.jboss.as.test.integration.management.util.MgmtOperationException;
 import org.jboss.dmr.ModelNode;
-import org.jboss.eap.additional.testsuite.annotations.ATTest;
 import org.jboss.eap.additional.testsuite.annotations.EapAdditionalTestsuite;
 import org.jboss.logging.Logger;
 import org.jboss.osgi.metadata.ManifestBuilder;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.asset.Asset;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
-import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 import org.junit.Ignore;
 import org.junit.runner.RunWith;
@@ -94,10 +77,10 @@ import org.junit.runner.RunWith;
  */
 @ServerSetup(LoggingProfilesTestCase.LoggingProfilesTestCaseSetup.class)
 @RunWith(Arquillian.class)
-@EapAdditionalTestsuite({"modules/testcases/jdkAll/Eap7/logging/src/main/java","modules/testcases/jdkAll/Eap71x-Proposed/logging/src/main/java","modules/testcases/jdkAll/Eap71x/logging/src/main/java","modules/testcases/jdkAll/Eap7.1.0.Beta/logging/src/main/java","modules/testcases/jdkAll/Eap70x/logging/src/main/java","modules/testcases/jdkAll/Eap70x-Proposed/logging/src/main/java","modules/testcases/jdkAll/WildflyRelease/logging/src/main/java","modules/testcases/jdkAll/Wildfly/logging/src/main/java","modules/testcases/jdkAll/Eap64x/logging/src/main/java","modules/testcases/jdkAll/Eap64x-Proposed/logging/src/main/java"})
+@EapAdditionalTestsuite({"modules/testcases/jdkAll/Eap7/logging/src/main/java","modules/testcases/jdkAll/Eap7.1.0.Beta/logging/src/main/java","modules/testcases/jdkAll/Eap70x/logging/src/main/java","modules/testcases/jdkAll/Eap70x-Proposed/logging/src/main/java","modules/testcases/jdkAll/WildflyRelease/logging/src/main/java","modules/testcases/jdkAll/Wildfly/logging/src/main/java","modules/testcases/jdkAll/Eap64x/logging/src/main/java","modules/testcases/jdkAll/Eap64x-Proposed/logging/src/main/java","modules/testcases/jdkAll/Eap63x/logging/src/main/java","modules/testcases/jdkAll/Eap62x/logging/src/main/java","modules/testcases/jdkAll/Eap61x/logging/src/main/java"})
 public class LoggingProfilesTestCase extends AbstractLoggingTest {
 	private static Logger log = Logger.getLogger(LoggingProfilesTestCase.class);
-        
+
 	@ContainerResource
 	private ManagementClient managementClient;
 	private static final String LOG_FILE_NAME = "profiles-test.log";
@@ -511,38 +494,5 @@ public class LoggingProfilesTestCase extends AbstractLoggingTest {
 			throw new RuntimeException("Operation not successful; outcome = "
 					+ result.get("outcome"));
 		}
-	}
-        
-    
-        @RunAsClient
-	@ATTest({"modules/testcases/jdkAll/Wildfly/logging/src/main/java#12.0.0.Final", "modules/testcases/jdkAll/Eap7/logging/src/main/java#7.1.0.GA", "modules/testcases/jdkAll/Eap71x/logging/src/main/java#7.1.1.GA", "modules/testcases/jdkAll/Eap71x-Proposed/logging/src/main/java#7.1.1.GA"})
-	public void separateApplicationLoggingTest() throws Exception {
-            URL testURL = new URL("http://" + managementClient.getMgmtAddress() + ":8080/Application1");
-
-            CloseableHttpClient httpClient = HttpClients.createDefault();
-            final HttpGet request = new HttpGet(testURL.toString());
-
-            CloseableHttpResponse response = null;
-            response = httpClient.execute(request);
-            
-            testURL = new URL("http://" + managementClient.getMgmtAddress() + ":8080/Application2");
-
-            httpClient = HttpClients.createDefault();
-            final HttpGet request2 = new HttpGet(testURL.toString());
-
-            response = httpClient.execute(request2);
-            
-            List<String> logfile = new LinkedList<>();
-        
-            final String logDir = System.getProperty("server.dir")+"/standalone/log";
-            if (logDir == null) {
-                throw new RuntimeException("Could not resolve jboss.server.log.dir");
-            }
-            final java.nio.file.Path logFile = Paths.get(logDir, "myapp1.log");
-            if (!Files.notExists(logFile)) {
-                logfile = Files.readAllLines(logFile, StandardCharsets.UTF_8);
-            }
-
-            assertTrue("Should not have messages from second App...",  !StringUtils.join(logfile,", ").contains("Application 2"));
 	}
 }

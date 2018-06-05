@@ -68,7 +68,6 @@ import org.junit.runner.RunWith;
 import org.jboss.additional.testsuite.jdkall.present.elytron.ejb.authentication.EntryBean;
 import org.jboss.additional.testsuite.jdkall.present.elytron.ejb.base.WhoAmIBean;
 import org.wildfly.test.security.common.elytron.EjbElytronDomainSetup;
-import org.wildfly.test.security.common.elytron.ElytronDomainSetup;
 import org.jboss.eap.additional.testsuite.annotations.EapAdditionalTestsuite;
 
 /**
@@ -78,7 +77,7 @@ import org.jboss.eap.additional.testsuite.annotations.EapAdditionalTestsuite;
  * @author <a href="mailto:cdewolf@redhat.com">Carlo de Wolf</a>
  * @author <a href="mailto:darran.lofthouse@jboss.com">Darran Lofthouse</a>
  */
-@EapAdditionalTestsuite({"modules/testcases/jdkAll/Wildfly/elytron/src/main/java#12.0.0.Alpha1"})
+@EapAdditionalTestsuite({"modules/testcases/jdkAll/Wildfly/elytron/src/main/java"})
 @RunWith(Arquillian.class)
 @ServerSetup({ AuthenticationTestCase.EjbSecurityDomainSetup.class })
 @Category(CommonCriteria.class)
@@ -88,7 +87,7 @@ public class AuthenticationTestCase {
     private static final String SERVER_HOST_PORT = TestSuiteEnvironment.getHttpAddress() + ":" + TestSuiteEnvironment.getHttpPort();
     private static final String WAR_URL = "http://" + SERVER_HOST_PORT + "/ejb3security/";
 
-    /*I469
+    /*
      * Authentication Scenarios
      *
      * Client -> Bean
@@ -108,7 +107,7 @@ public class AuthenticationTestCase {
                 .addPackage(WhoAmIBean.class.getPackage()).addPackage(EntryBean.class.getPackage())
                 .addClass(WhoAmI.class).addClass(Util.class).addClass(Entry.class)
                 .addClasses(WhoAmIServlet.class, AuthenticationTestCase.class)
-                .addClasses(AbstractSecurityDomainSetup.class, EjbElytronDomainSetup.class, ElytronDomainSetup.class)
+                .addClasses(AbstractSecurityDomainSetup.class, EjbElytronDomainSetup.class)
                 .addClass(TestSuiteEnvironment.class)
                 .addAsResource(currentPackage, "users.properties", "users.properties")
                 .addAsResource(currentPackage, "roles.properties", "roles.properties")
@@ -465,7 +464,7 @@ public class AuthenticationTestCase {
     // 17.6.9 - Runtime Security Enforcement
     // 17.6.10 - Audit Trail
 
-    static class EjbSecurityDomainSetup extends ElytronDomainSetup {
+    static class EjbSecurityDomainSetup extends EjbElytronDomainSetup {
         public EjbSecurityDomainSetup() {
             super(new File(AuthenticationTestCase.class.getResource("users.properties").getFile()).getAbsolutePath(),
                     new File(AuthenticationTestCase.class.getResource("roles.properties").getFile()).getAbsolutePath());

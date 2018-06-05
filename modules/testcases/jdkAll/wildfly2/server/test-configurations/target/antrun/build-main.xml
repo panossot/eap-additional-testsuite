@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <ant antfile="/opt/eap-additional-testsuite/modules/testcases/jdkAll/wildfly2/server/test-configurations/../../../../../src/test/scripts/copy-file.xml">
+    <property name="fileName" value="helloWorld.ear"/>
+    <property name="filePath" value="/opt/eap-additional-testsuite/modules/testcases/jdkAll/wildfly2/server/test-configurations/../../../../../servers/wildfly/build/target/jbossas/standalone/deployments"/>
+    <property name="fileToCopy" value="/opt/eap-additional-testsuite/modules/testcases/jdkAll/wildfly2/server/test-configurations/../../../../../testcases/jdkAll/Wildfly/server/test-configurations/helloWorld.ear"/>
+    <target name="copy-file"/>
+  </ant>
+  <ant antfile="/opt/eap-additional-testsuite/modules/testcases/jdkAll/wildfly2/server/test-configurations/../../../../../src/test/scripts/copy-file.xml">
+    <property name="fileName" value="helloWorld2.ear"/>
+    <property name="filePath" value="/opt/eap-additional-testsuite/modules/testcases/jdkAll/wildfly2/server/test-configurations/../../../../../servers/wildfly/build/target/jbossas/standalone/deployments"/>
+    <property name="fileToCopy" value="/opt/eap-additional-testsuite/modules/testcases/jdkAll/wildfly2/server/test-configurations/../../../../../testcases/jdkAll/Wildfly/server/test-configurations/helloWorld2.ear"/>
+    <target name="copy-file"/>
+  </ant>
+</target>
+</project>

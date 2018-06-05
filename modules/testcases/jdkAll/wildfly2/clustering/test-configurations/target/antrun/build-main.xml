@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <ant antfile="/opt/eap-additional-testsuite/modules/testcases/jdkAll/wildfly2/clustering/test-configurations/../../../../../src/test/scripts/clustering-build.xml">
+    <property name="workspace" value="//opt/eap-additional-testsuite/modules/testcases/jdkAll/wildfly2/clustering/test-configurations/../../../../.."/>
+    <property name="server" value="wildfly"/>
+    <target name="build-clustering"/>
+  </ant>
+  <ant antfile="/opt/eap-additional-testsuite/modules/testcases/jdkAll/wildfly2/clustering/test-configurations/../../../../../src/test/scripts/basic-build.xml">
+    <property name="workspace" value="//opt/eap-additional-testsuite/modules/testcases/jdkAll/wildfly2/clustering/test-configurations/../../../../.."/>
+    <property name="server" value="wildfly"/>
+    <property name="dist" value="wildfly-SYNC-tcp-0"/>
+    <property name="standaloneConfiguration" value="/opt/eap-additional-testsuite/modules/testcases/jdkAll/wildfly2/clustering/test-configurations/../src/test/config/standaloneWildfly/standalone-full-ha.xml"/>
+    <target name="build-basic-check"/>
+  </ant>
+  <ant antfile="/opt/eap-additional-testsuite/modules/testcases/jdkAll/wildfly2/clustering/test-configurations/../../../../../src/test/scripts/basic-build.xml">
+    <property name="workspace" value="//opt/eap-additional-testsuite/modules/testcases/jdkAll/wildfly2/clustering/test-configurations/../../../../.."/>
+    <property name="server" value="wildfly"/>
+    <property name="dist" value="wildfly-SYNC-tcp-1"/>
+    <property name="standaloneConfiguration" value="/opt/eap-additional-testsuite/modules/testcases/jdkAll/wildfly2/clustering/test-configurations/../src/test/config/standaloneWildfly/standalone-full-ha.xml"/>
+    <target name="build-basic-check"/>
+  </ant>
+</target>
+</project>

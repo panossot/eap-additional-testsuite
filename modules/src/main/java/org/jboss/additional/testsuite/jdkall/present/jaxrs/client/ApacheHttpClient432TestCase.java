@@ -56,7 +56,7 @@ import static org.junit.Assert.assertEquals;
 
 @RunAsClient
 @RunWith(Arquillian.class)
-@EapAdditionalTestsuite({"modules/testcases/jdkAll/Eap7/jaxrs/src/main/java","modules/testcases/jdkAll/Eap71x-Proposed/jaxrs/src/main/java","modules/testcases/jdkAll/Eap71x/jaxrs/src/main/java"})
+@EapAdditionalTestsuite({"modules/testcases/jdkAll/Eap7/jaxrs/src/main/java"})
 public class ApacheHttpClient432TestCase {
 
     public static final String DEPLOYMENT = "ApacheHttpClient432TestCase.war";

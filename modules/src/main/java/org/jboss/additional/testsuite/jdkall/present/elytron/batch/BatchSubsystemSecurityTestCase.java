@@ -84,8 +84,9 @@ import org.jboss.eap.additional.testsuite.annotations.EapAdditionalTestsuite;
  *
  * @author Jan Martiska
  */
-@EapAdditionalTestsuite({"modules/testcases/jdkAll/Wildfly/elytron/src/main/java","modules/testcases/jdkAll/Eap7/elytron/src/main/java","modules/testcases/jdkAll/Eap71x-Proposed/elytron/src/main/java","modules/testcases/jdkAll/Eap71x/elytron/src/main/java"})
-@ServerSetup({BatchSubsystemSecurityTestCase.CreateBatchSecurityDomainSetupTask.class,BatchSubsystemSecurityTestCase.ActivateBatchSecurityDomainSetupTask.class})
+@EapAdditionalTestsuite({"modules/testcases/jdkAll/Wildfly/elytron/src/main/java","modules/testcases/jdkAll/Eap7/elytron/src/main/java"})
+@ServerSetup({BatchSubsystemSecurityTestCase.CreateBatchSecurityDomainSetupTask.class,
+        BatchSubsystemSecurityTestCase.ActivateBatchSecurityDomainSetupTask.class})
 @RunWith(Arquillian.class)
 @Ignore
 public class BatchSubsystemSecurityTestCase {

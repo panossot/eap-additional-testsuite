@@ -43,13 +43,13 @@ import org.jboss.shrinkwrap.api.Archive;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.jboss.eap.additional.testsuite.annotations.EapAdditionalTestsuite;
-import org.jboss.eap.additional.testsuite.annotations.ATTest;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import java.util.Arrays;
 import java.util.List;
+import static org.hibernate.validator.internal.util.Contracts.assertTrue;
 import org.jboss.marshalling.InputStreamByteInput;
 import org.jboss.marshalling.MarshallingConfiguration;
 import org.jboss.marshalling.OutputStreamByteOutput;
@@ -63,7 +63,7 @@ import org.jboss.marshalling.river.RiverUnmarshaller;
 import org.jboss.shrinkwrap.api.spec.JavaArchive;
 
 @RunWith(Arquillian.class)
-@EapAdditionalTestsuite({"modules/testcases/jdkAll/Wildfly/core/src/main/java","modules/testcases/jdkAll/Eap7/core/src/main/java","modules/testcases/jdkAll/Eap71x-Proposed/core/src/main/java","modules/testcases/jdkAll/Eap71x/core/src/main/java","modules/testcases/jdkAll/Eap7.1.0.Beta/core/src/main/java","modules/testcases/jdkAll/Eap70x/core/src/main/java"})
+@EapAdditionalTestsuite({"modules/testcases/jdkAll/Wildfly/core/src/main/java","modules/testcases/jdkAll/Eap7/core/src/main/java","modules/testcases/jdkAll/Eap7.1.0.Beta/core/src/main/java","modules/testcases/jdkAll/Eap70x/core/src/main/java"})
 public class MarshallingTestCase {
 
     public static final String DEPLOYMENT = "marshallingTestCase.war";
@@ -81,7 +81,7 @@ public class MarshallingTestCase {
         return archive;
     }
 
-    @ATTest({"modules/testcases/jdkAll/Wildfly/core/src/main/java#10.0.0.Final*11.0.0.Beta1"})
+    @Test
     public void deserializationTest() throws Exception {
         RiverMarshallerFactory factory = new RiverMarshallerFactory();  
 	    MarshallingConfiguration configuration = new MarshallingConfiguration();  
@@ -126,7 +126,7 @@ public class MarshallingTestCase {
         } catch(InvalidObjectException ioe) {
         	// This is expected behavior
     	} catch(Exception e) {
-            Assert.assertTrue("testNoDefaultConstructor has failed.",false);
+            assertTrue(false,"testNoDefaultConstructor has failed.");
     	}         
     }  
     

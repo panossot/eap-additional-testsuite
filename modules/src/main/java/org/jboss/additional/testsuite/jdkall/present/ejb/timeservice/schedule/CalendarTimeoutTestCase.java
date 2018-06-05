@@ -144,7 +144,7 @@ public class CalendarTimeoutTestCase {
      * The timer should be fired every 15 minutes (absolutely).
      * This is a test to ensure WFLY-9537 will not break this.
      */
-    @ATTest({"modules/testcases/jdkAll/Wildfly/ejb/src/main/java#12.0.0.Alpha1"})
+    @ATTest({"modules/testcases/jdkAll/Wildfly/ejb/src/main/java#14.0.0.Alpha1"})
     public void testChangeUS2Summer() {
         Calendar start = new GregorianCalendar(TimeZone.getTimeZone("America/Los_Angeles"));
         start.clear();

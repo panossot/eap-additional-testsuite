@@ -66,7 +66,7 @@ import org.jboss.eap.additional.testsuite.annotations.EapAdditionalTestsuite;
  *
  * @author Josef Cacek
  */
-@EapAdditionalTestsuite({"modules/testcases/jdkAll/Wildfly/elytron/src/main/java","modules/testcases/jdkAll/Eap7/elytron/src/main/java","modules/testcases/jdkAll/Eap71x-Proposed/elytron/src/main/java","modules/testcases/jdkAll/Eap71x/elytron/src/main/java"})
+@EapAdditionalTestsuite({"modules/testcases/jdkAll/Wildfly/elytron/src/main/java","modules/testcases/jdkAll/Eap7/elytron/src/main/java"})
 public abstract class AbstractCredentialStoreTestCase {
 
     @ArquillianResource

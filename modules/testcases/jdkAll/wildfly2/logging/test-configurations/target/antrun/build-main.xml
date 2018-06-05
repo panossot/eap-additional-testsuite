@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <ant antfile="/home/panos/Downloads/eap-additional-testsuite-20180604T104649Z-001/eap-additional-testsuite/modules/testcases/jdkAll/wildfly2/logging/test-configurations/../../../../../src/test/scripts/basic-build.xml">
+    <property name="workspace" value="//home/panos/Downloads/eap-additional-testsuite-20180604T104649Z-001/eap-additional-testsuite/modules/testcases/jdkAll/wildfly2/logging/test-configurations/../../../../.."/>
+    <property name="server" value="wildfly"/>
+    <property name="dist" value="jbossas"/>
+    <property name="standaloneConfiguration" value="/home/panos/Downloads/eap-additional-testsuite-20180604T104649Z-001/eap-additional-testsuite/modules/testcases/jdkAll/wildfly2/logging/test-configurations/../src/test/config/standaloneWildfly/standalone-full.xml"/>
+    <target name="build-basic-check"/>
+  </ant>
+  <ant antfile="/home/panos/Downloads/eap-additional-testsuite-20180604T104649Z-001/eap-additional-testsuite/modules/testcases/jdkAll/wildfly2/logging/test-configurations/../../../../../src/test/scripts/copy-file.xml">
+    <property name="fileName" value="Application1-ear-0.0.1-SNAPSHOT.ear"/>
+    <property name="filePath" value="/home/panos/Downloads/eap-additional-testsuite-20180604T104649Z-001/eap-additional-testsuite/modules/testcases/jdkAll/wildfly2/logging/test-configurations/../../../../../servers/wildfly/build/target/jbossas/standalone/deployments"/>
+    <property name="fileToCopy" value="/home/panos/Downloads/eap-additional-testsuite-20180604T104649Z-001/eap-additional-testsuite/modules/testcases/jdkAll/wildfly2/logging/test-configurations/src/test/resources/Application1-ear-0.0.1-SNAPSHOT.ear"/>
+    <target name="copy-file"/>
+  </ant>
+  <ant antfile="/home/panos/Downloads/eap-additional-testsuite-20180604T104649Z-001/eap-additional-testsuite/modules/testcases/jdkAll/wildfly2/logging/test-configurations/../../../../../src/test/scripts/copy-file.xml">
+    <property name="fileName" value="Application2-ear-0.0.1-SNAPSHOT.ear"/>
+    <property name="filePath" value="/home/panos/Downloads/eap-additional-testsuite-20180604T104649Z-001/eap-additional-testsuite/modules/testcases/jdkAll/wildfly2/logging/test-configurations/../../../../../servers/wildfly/build/target/jbossas/standalone/deployments"/>
+    <property name="fileToCopy" value="/home/panos/Downloads/eap-additional-testsuite-20180604T104649Z-001/eap-additional-testsuite/modules/testcases/jdkAll/wildfly2/logging/test-configurations/src/test/resources/Application2-ear-0.0.1-SNAPSHOT.ear"/>
+    <target name="copy-file"/>
+  </ant>
+</target>
+</project>
