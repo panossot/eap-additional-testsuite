@@ -46,11 +46,7 @@ import org.junit.runner.RunWith;
 @RunWith(Arquillian.class)
 @ServerSetup(LogManagerEncodingAttributeServerSetupTask.class)
 @RunAsClient
-@EapAdditionalTestsuite({
-        "modules/testcases/jdkAll/Eap71x/logging/src/main/java#7.1.6",
-        "modules/testcases/jdkAll/Eap71x-Proposed/logging/src/main/java#7.1.6",
-        "modules/testcases/jdkAll/WildflyRelease-13.0.0.Final/logging/src/main/java",
-        "modules/testcases/jdkAll/Eap72x/logging/src/main/java"})
+@EapAdditionalTestsuite({"modules/testcases/jdkAll/Eap71x/logging/src/main/java#7.1.6","modules/testcases/jdkAll/Eap71x-Proposed/logging/src/main/java#7.1.6","modules/testcases/jdkAll/WildflyRelease-13.0.0.Final/logging/src/main/java","modules/testcases/jdkAll/Eap72x/logging/src/main/java"})
 public class LogManagerEncodingAttributeTestCase {
 
     private static final String DEPLOYMENT = "deployment";
