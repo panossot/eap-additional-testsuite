@@ -71,7 +71,7 @@ public class SecurityTestCase {
             fail("must not allow to create a session with bad authentication");
         } catch (ActiveMQException e) {
             assertEquals(ActiveMQExceptionType.SECURITY_EXCEPTION, e.getType());
-            assertTrue(e.getMessage(), e.getMessage().startsWith("AMQ119031"));
+            assertTrue(e.getMessage(), e.getMessage().startsWith("AMQ119031") || e.getMessage().startsWith("AMQ229031"));
         } finally {
             if (sf != null) {
                 sf.close();
@@ -87,7 +87,7 @@ public class SecurityTestCase {
             fail("must not allow to create a session without any authentication");
         } catch (ActiveMQException e) {
             assertEquals(ActiveMQExceptionType.SECURITY_EXCEPTION, e.getType());
-            assertTrue(e.getMessage(), e.getMessage().startsWith("AMQ119031"));
+            assertTrue(e.getMessage(), e.getMessage().startsWith("AMQ119031") || e.getMessage().startsWith("AMQ229031"));
         } finally {
             if (sf != null) {
                 sf.close();
@@ -103,7 +103,7 @@ public class SecurityTestCase {
             fail("must not allow to create a session with the default cluster user credentials");
         } catch (ActiveMQException e) {
             assertEquals(ActiveMQExceptionType.CLUSTER_SECURITY_EXCEPTION, e.getType());
-            assertTrue(e.getMessage(), e.getMessage().startsWith("AMQ119099"));
+            assertTrue(e.getMessage(), e.getMessage().startsWith("AMQ119099") || e.getMessage().startsWith("AMQ229099"));
         } finally {
             if (sf != null) {
                 sf.close();
@@ -159,7 +159,7 @@ public class SecurityTestCase {
             fail("Must not create a durable queue without the CREATE_DURABLE_QUEUE permission");
         } catch (ActiveMQException e) {
             assertEquals(ActiveMQExceptionType.SECURITY_EXCEPTION, e.getType());
-            assertTrue(e.getMessage().startsWith("AMQ119032"));
+            assertTrue(e.getMessage().startsWith("AMQ119032") || e.getMessage().startsWith("AMQ229032"));
             assertTrue(e.getMessage().contains(CheckType.CREATE_DURABLE_QUEUE.toString()));
         } finally {
             if (session != null) {
