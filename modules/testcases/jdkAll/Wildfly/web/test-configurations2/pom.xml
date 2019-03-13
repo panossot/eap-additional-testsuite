@@ -14,11 +14,11 @@
         <version>1.0.3.Final</version>
     </parent>
 
-    <artifactId>wildfly-additional-testsuite-web-configuration</artifactId>
-    <name>wildfly additional testsuite: web : configuration</name>
+    <artifactId>wildfly-additional-testsuite-web-configuration2</artifactId>
+    <name>wildfly additional testsuite: web : configuration2</name>
             
     <properties>
-	<standalone.conf>${basedir}/../src/test/config/standaloneWildfly/standalone.xml</standalone.conf>
+	<standalone.conf>${basedir}/../src/test/config2/standaloneWildfly/standalone.xml</standalone.conf>
         <jboss.modules.dir>${basedir}/../../../../..</jboss.modules.dir>
         <server>wildfly</server>
     </properties>
@@ -56,11 +56,8 @@
 		        <configuration>         
 		            <!-- Tests to execute. -->
 		            <includes>
-		                <include>org/jboss/additional/testsuite/jdkall/present/web/**/*TestCase.java</include>
-		            </includes> 
-                            <excludes>
-                                <exclude>org/jboss/additional/testsuite/jdkall/present/web/**/IdentityPropagationAuthenticationTestCase.java</exclude>
-                            </excludes>
+		                <include>org/jboss/additional/testsuite/jdkall/present/web/**/IdentityPropagationAuthenticationTestCase.java</include>
+                            </includes>
 		        </configuration>
 		    </execution>
 		</executions>
@@ -89,18 +86,6 @@
                                     <property name="dist" value="jbossas" />
 	                            <property name="standaloneConfiguration" value="${standalone.conf}" />
 	                            <target name="build-basic-check"/>
-	                        </ant>
-                                <ant antfile="${jboss.modules.dir}/src/test/scripts/copy-file.xml">
-	                            <property name="fileName" value="rss.png" />
-                                    <property name="filePath" value="${jboss.modules.dir}/testcases/jdkAll/Wildfly/web/test-configurations/src/test/resources" />
-                                    <property name="fileToCopy" value="${jboss.modules.dir}/src/resources/rss.png" />
-	                            <target name="copy-file"/>
-	                        </ant>
-                                <ant antfile="${jboss.modules.dir}/src/test/scripts/copy-file.xml">
-	                            <property name="fileName" value="testTag-1.0-SNAPSHOT.war" />
-                                    <property name="filePath" value="${jboss.modules.dir}/testcases/jdkAll/Wildfly/web/test-configurations/src/test/resources" />
-                                    <property name="fileToCopy" value="${jboss.modules.dir}/src/resources/testTag-1.0-SNAPSHOT.war" />
-	                            <target name="copy-file"/>
 	                        </ant>
 	                    </target>
 	                </configuration>
