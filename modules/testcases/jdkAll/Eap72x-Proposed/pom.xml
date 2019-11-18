@@ -146,11 +146,6 @@
 		    <artifactId>hibernate-core</artifactId>
 		    <version>5.4.9.Final</version>
 		</dependency>
-                <dependency>
-		    <groupId>org.jboss.as</groupId>
-		    <artifactId>jboss-as-web</artifactId>
-		    <version>7.2.0.Final</version>
-		</dependency>
 		<dependency>
 		    <groupId>org.jboss.resteasy</groupId>
 		    <artifactId>resteasy-client</artifactId>
@@ -383,11 +378,6 @@
 		    <groupId>org.hibernate</groupId>
 		    <artifactId>hibernate-core</artifactId>
 		    <version>5.4.9.Final</version>
-		</dependency>
-                <dependency>
-		    <groupId>org.jboss.as</groupId>
-		    <artifactId>jboss-as-web</artifactId>
-		    <version>7.2.0.Final</version>
 		</dependency>
 		<dependency>
 		    <groupId>org.jboss.resteasy</groupId>
