@@ -141,6 +141,16 @@
 		    <artifactId>jackson-annotations</artifactId>
 		    <version>2.10.1</version>
 		</dependency>
+                <dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-core</artifactId>
+		    <version>5.4.9.Final</version>
+		</dependency>
+                <dependency>
+		    <groupId>org.jboss.as</groupId>
+		    <artifactId>jboss-as-web</artifactId>
+		    <version>7.2.0.Final</version>
+		</dependency>
 		<dependency>
 		    <groupId>org.jboss.resteasy</groupId>
 		    <artifactId>resteasy-client</artifactId>
@@ -368,6 +378,16 @@
 		    <groupId>com.fasterxml.jackson.core</groupId>
 		    <artifactId>jackson-annotations</artifactId>
 		    <version>2.10.1</version>
+		</dependency>
+                <dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-core</artifactId>
+		    <version>5.4.9.Final</version>
+		</dependency>
+                <dependency>
+		    <groupId>org.jboss.as</groupId>
+		    <artifactId>jboss-as-web</artifactId>
+		    <version>7.2.0.Final</version>
 		</dependency>
 		<dependency>
 		    <groupId>org.jboss.resteasy</groupId>
