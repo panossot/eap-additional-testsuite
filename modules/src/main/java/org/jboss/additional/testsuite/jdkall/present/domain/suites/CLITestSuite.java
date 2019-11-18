@@ -31,7 +31,6 @@ import org.jboss.additional.testsuite.jdkall.present.domain.management.cli.Deplo
 import org.jboss.additional.testsuite.jdkall.present.domain.management.cli.DeploySingleServerGroupTestCase;
 import org.jboss.additional.testsuite.jdkall.present.domain.management.cli.DomainDeployWithRuntimeNameTestCase;
 import org.jboss.additional.testsuite.jdkall.present.domain.management.cli.DomainDeploymentOverlayTestCase;
-import org.jboss.additional.testsuite.jdkall.present.domain.management.cli.JmsTestCase;
 import org.jboss.additional.testsuite.jdkall.present.domain.management.cli.CloneProfileTestCase;
 import org.jboss.additional.testsuite.jdkall.present.domain.management.cli.RolloutPlanTestCase;
 import org.jboss.as.test.integration.domain.management.util.DomainLifecycleUtil;
@@ -48,7 +47,6 @@ import org.junit.runners.Suite;
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-        JmsTestCase.class,
         DeployAllServerGroupsTestCase.class,
         DeploySingleServerGroupTestCase.class,
         DomainDeploymentOverlayTestCase.class,
