@@ -33,8 +33,6 @@ import org.jboss.arquillian.container.test.api.RunAsClient;
 import org.jboss.arquillian.test.api.ArquillianResource;
 import org.jboss.additional.testsuite.jdkall.present.clustering.ClusteringTestConstants;
 import org.jboss.additional.testsuite.jdkall.present.clustering.NodeUtil;
-import org.jboss.as.web.session.RoutingSupport;
-import org.jboss.as.web.session.SimpleRoutingSupport;
 import org.jboss.eap.additional.testsuite.annotations.EapAdditionalTestsuite;
 import org.jboss.logging.Logger;
 import org.junit.After;
@@ -60,7 +58,6 @@ import org.junit.BeforeClass;
 public abstract class ClusterAbstractTestCase implements ClusteringTestConstants {
 
     protected static final Logger log = Logger.getLogger(ClusterAbstractTestCase.class);
-    private static final RoutingSupport routing = new SimpleRoutingSupport();
     static final Map<String, String> NODE_TO_CONTAINER = new TreeMap<>();
     static final Map<String, String> NODE_TO_DEPLOYMENT = new TreeMap<>();
     static {
