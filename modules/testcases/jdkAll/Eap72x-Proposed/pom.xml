@@ -170,6 +170,10 @@
 		    <artifactId>wildfly-messaging-activemq</artifactId>
 		</dependency>
                 <dependency>
+		    <groupId>org.jboss.eap</groupId>
+		    <artifactId>wildfly-messaging</artifactId>
+		</dependency>
+                <dependency>
 		    <groupId>joda-time</groupId>
 		    <artifactId>joda-time</artifactId>
 		</dependency>
@@ -412,6 +416,10 @@
                 <dependency>
 		    <groupId>org.jboss.eap</groupId>
 		    <artifactId>wildfly-messaging-activemq</artifactId>
+		</dependency>
+                <dependency>
+		    <groupId>org.jboss.eap</groupId>
+		    <artifactId>wildfly-messaging</artifactId>
 		</dependency>
                 <dependency>
 		    <groupId>joda-time</groupId>
