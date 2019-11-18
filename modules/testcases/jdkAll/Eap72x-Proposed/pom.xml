@@ -167,6 +167,16 @@
 		    <version>4.0.26.Final</version>
 		</dependency>
                 <dependency>
+		    <groupId>log4j</groupId>
+		    <artifactId>log4j</artifactId>
+		    <version>1.2.17</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.jboss.logging</groupId>
+		    <artifactId>jboss-logging</artifactId>
+		    <version>3.4.1.Final</version>
+		</dependency>
+                <dependency>
 		    <groupId>joda-time</groupId>
 		    <artifactId>joda-time</artifactId>
 		    <version>2.3</version>
@@ -398,6 +408,16 @@
 		    <groupId>org.jboss</groupId>
 		    <artifactId>jboss-ejb-client</artifactId>
 		    <version>4.0.26.Final</version>
+		</dependency>
+		<dependency>
+		    <groupId>log4j</groupId>
+		    <artifactId>log4j</artifactId>
+		    <version>1.2.17</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.jboss.logging</groupId>
+		    <artifactId>jboss-logging</artifactId>
+		    <version>3.4.1.Final</version>
 		</dependency>
                 <dependency>
 		    <groupId>joda-time</groupId>
