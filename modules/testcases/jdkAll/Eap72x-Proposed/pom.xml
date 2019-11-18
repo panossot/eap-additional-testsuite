@@ -112,10 +112,9 @@
 		    <version>1.0.1</version>
 		</dependency>
                 <dependency>
-		    <groupId>jboss</groupId>
-		    <artifactId>jboss-annotations-ejb3</artifactId>
-		    <version>4.2.2.GA</version>
-		    <scope>provided</scope>
+		    <groupId>org.jboss.ejb3</groupId>
+		    <artifactId>jboss-ejb3-ext-api</artifactId>
+		    <version>2.3.0.Final</version>
 		</dependency>
                 <dependency>
                     <groupId>org.jboss.osgi.metadata</groupId>
@@ -296,10 +295,9 @@
 		    <version>1.0.1</version>
 		</dependency>
                 <dependency>
-		    <groupId>jboss</groupId>
-		    <artifactId>jboss-annotations-ejb3</artifactId>
-		    <version>4.2.2.GA</version>
-		    <scope>provided</scope>
+		    <groupId>org.jboss.ejb3</groupId>
+		    <artifactId>jboss-ejb3-ext-api</artifactId>
+		    <version>2.3.0.Final</version>
 		</dependency>
                 <dependency>
                     <groupId>org.jboss.osgi.metadata</groupId>
