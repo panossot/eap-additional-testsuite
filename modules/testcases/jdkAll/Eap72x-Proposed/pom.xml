@@ -117,6 +117,16 @@
 		    <version>2.3.0.Final</version>
 		</dependency>
                 <dependency>
+		    <groupId>org.jboss</groupId>
+		    <artifactId>jboss-ejb-client</artifactId>
+		    <version>4.0.26.Final</version>
+		</dependency>
+                <dependency>
+		    <groupId>joda-time</groupId>
+		    <artifactId>joda-time</artifactId>
+		    <version>2.3</version>
+		</dependency>
+                <dependency>
                     <groupId>org.jboss.osgi.metadata</groupId>
                     <artifactId>jbosgi-metadata</artifactId>
                     <version>2.2.0.Final</version>
@@ -298,6 +308,16 @@
 		    <groupId>org.jboss.ejb3</groupId>
 		    <artifactId>jboss-ejb3-ext-api</artifactId>
 		    <version>2.3.0.Final</version>
+		</dependency>
+                <dependency>
+		    <groupId>org.jboss</groupId>
+		    <artifactId>jboss-ejb-client</artifactId>
+		    <version>4.0.26.Final</version>
+		</dependency>
+                <dependency>
+		    <groupId>joda-time</groupId>
+		    <artifactId>joda-time</artifactId>
+		    <version>2.3</version>
 		</dependency>
                 <dependency>
                     <groupId>org.jboss.osgi.metadata</groupId>
