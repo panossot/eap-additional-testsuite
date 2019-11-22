@@ -33,6 +33,7 @@ import org.jboss.additional.testsuite.jdkall.present.domain.management.cli.Domai
 import org.jboss.additional.testsuite.jdkall.present.domain.management.cli.DomainDeploymentOverlayTestCase;
 import org.jboss.additional.testsuite.jdkall.present.domain.management.cli.CloneProfileTestCase;
 import org.jboss.additional.testsuite.jdkall.present.domain.management.cli.RolloutPlanTestCase;
+import org.jboss.additional.testsuite.jdkall.present.domain.management.cli.JmsTestCase;
 import org.jboss.as.test.integration.domain.management.util.DomainLifecycleUtil;
 import org.jboss.as.test.integration.domain.management.util.DomainTestSupport;
 import org.jboss.eap.additional.testsuite.annotations.EapAdditionalTestsuite;
@@ -47,6 +48,7 @@ import org.junit.runners.Suite;
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
+        JmsTestCase.class,
         DeployAllServerGroupsTestCase.class,
         DeploySingleServerGroupTestCase.class,
         DomainDeploymentOverlayTestCase.class,

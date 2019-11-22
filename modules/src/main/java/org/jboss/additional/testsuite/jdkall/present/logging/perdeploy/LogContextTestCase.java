@@ -61,7 +61,7 @@ import org.junit.runner.RunWith;
  */
 @ServerSetup(LogContextTestCase.LoggingProfileSetup.class)
 @RunWith(Arquillian.class)
-@EapAdditionalTestsuite({"modules/testcases/jdkAll/Eap64x/logging/src/main/java#7.2.0*7.2.4","modules/testcases/jdkAll/Eap64x-Proposed/logging/src/main/java#7.2.0*7.2.4","modules/testcases/jdkAll/Eap63x/logging/src/main/java","modules/testcases/jdkAll/Eap62x/logging/src/main/java"})
+@EapAdditionalTestsuite({"modules/testcases/jdkAll/Eap64x/logging/src/main/java","modules/testcases/jdkAll/Eap64x-Proposed/logging/src/main/java","modules/testcases/jdkAll/Eap63x/logging/src/main/java","modules/testcases/jdkAll/Eap62x/logging/src/main/java"})
 public class LogContextTestCase extends AbstractLoggingTest {
     private static final String LOG_FILE_NAME = "log-context-profile-test.log";
 

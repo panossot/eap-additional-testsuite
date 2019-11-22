@@ -106,6 +106,10 @@
 		    <version>18.0.1.Final</version>
 		</dependency>
                 <dependency>
+		    <groupId>org.wildfly.core</groupId>
+		    <artifactId>wildfly-logging</artifactId>
+		</dependency>
+                <dependency>
 		    <groupId>javax.batch</groupId>
 		    <artifactId>javax.batch-api</artifactId>
 		    <version>1.0.1</version>
